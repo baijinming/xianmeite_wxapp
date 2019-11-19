@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "shopCar": "/components/shopcar/shopcar",
+    "empty": "/components/empty/empty"
+  },
+  "navigationBarTitleText": "商品分类"
+}

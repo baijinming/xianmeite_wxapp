@@ -1,0 +1,105 @@
+<!--pages/confirmOrder/confirm.wxml-->
+<view hidden="{{hiddenPage}}">
+  <view class='pageWrapper'>
+    <view class='address'>
+      <view><image class='addrPos' src='../../images/address@2x.png'></image></view>
+      <view class='addrWrapper' wx:if="{{hasAddress}}">
+        <view>{{addressList.consignee}} <text>{{addressList.mobile}}</text></view>
+        <view class='addrDetail'>
+          {{addressList.province_name}}{{addressList.city_name}}{{addressList.district_name}}{{item.address}}
+        </view>
+      </view>
+      <view class='addrWrapper' wx:else>您还没有收货人地址</view>
+      <view bindtap="goAddress"><image class='arrow' src='../../images/comment.png'></image></view>
+    </view>
+    <view class='chooseType'>
+      <view class='text'>选择支付方式</view>
+      <view class='payType'>
+        <view bindtap='changeType' data-type='1'>
+          <view class="checkbox">
+            <image wx:if="{{payType==1}}" class="radio"
+                   src='../../images/gou@2x.png' bindtap='changeType' data-type='1'>
+            </image>
+            <image wx:else class="radio"
+                   src='../../images/gou.png' bindtap='changeType' data-type='1'>
+            </image>
+          </view>
+          微信支付
+        </view>
+        <!-- <view bindtap='changeType' data-type='2'>
+          <view class="checkbox">
+            <image wx:if="{{payType==2}}" class="radio"
+                   src='../../images/gou@2x.png' bindtap='changeType' data-type='2'>
+            </image>
+            <image wx:else class="radio"
+                   src='../../images/gou.png' bindtap='changeType' data-type='2'>
+            </image>
+          </view>
+          余额支付
+        </view> -->
+      </view>
+    </view>
+
+    <view class='conGoods'>
+      <view class="store-item" wx:for="{{cartList}}" wx:key="index">
+        <view class="store-header">
+          <image class="store-icon" src="/images/store_icon.png"></image>
+          <view class="store-name">{{item.shop_name}}</view>
+        </view>
+        <view class='conGoodsList' wx:for="{{item.cartList}}" wx:key="index">
+          <view class='bgImg' style='background-image:url({{item.original_img}})'></view>
+          <view class='con'>
+            <view class='gTitle'>{{item.goods_name}}</view>
+            <view class='gUnit'>规格：{{item.spec_key_name}}</view>
+            <view class='gCount'>数量：{{item.goods_num}}</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='calcViewWrapper'>
+        <view class='calcView'> <text>商品金额</text> <view>￥{{shop_total}} </view></view>
+        <view class='calcView'> <text>邮费</text> <view>￥{{totalPrice.post_fee}} </view></view>
+        <view class='calcView'> 
+          <text>优惠</text> 
+          <view wx:if="{{!couponId}}" bindtap="showCoupon">使用优惠券 ></view>
+          <view wx:else class='text-success' bindtap="showCoupon">￥{{couponMoney}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 参与先到先得活动积分提示框 -->
+    <view wx:if="{{isJoinAc}}" class="ac-container">支付成功后，先到先得活动比赛增加 <text>{{acScore}}</text> 分</view>
+  </view>
+
+  <view class='confirmBtn'>
+    <view>
+      <text>共{{totalPrice.num}}件</text>
+      <view>合计: <view class='text-danger'>￥{{totalPrice.total_fee}}</view></view>
+    </view>
+    <button bindtap="confirmOrder">提交订单</button>
+  </view>
+
+  <!-- 余额不足 -->
+  <view wx:if="{{showPopup}}" class="mask" bindtap="closePopup"></view>
+  <view wx:if="{{showPopup}}" class="recharge-popup">
+    <image class="close" src="../../images/close.png" bindtap="closePopup"></image>
+    <image class="money-icon" src="../../images/money_icon.png"></image>
+    <view class="popup-text1">余额不足</view>
+    <view class="popup-text2">当前余额不足，赶快去充值吧</view>
+    <navigator class="recharge-btn" url="/pages/user/recharge/recharge">立即充值</navigator>
+  </view>
+
+  <!-- 优惠券领取 -->
+  <view wx:if="{{showCoupon}}" class="mask" bindtap="hideCoupon"></view>
+  <view wx:if="{{showCoupon}}" class="coupon-container">
+    <view class="coupon-title">优惠券</view>
+    <view class="coupon" wx:for="{{list}}" wx:key="index">
+      <view class="text1">¥ <text>{{item.money}}</text> </view>
+      <view class="text2">
+        <view class="title1">满{{item.condition}}使用</view>
+        <view class="title2">全场通用</view>
+      </view>
+      <view class="text3" bindtap="useCoupon" data-id="{{item.coupon_id}}" data-money="{{item.money}}" data-condition="{{item.condition}}">立即使用</view>
+    </view>
+    <view class="no-couponText" wx:if="{{!list[0]}}">暂无可用优惠券</view>
+  </view>
+</view>

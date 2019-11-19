@@ -1,0 +1,152 @@
+<!--pages/detail/detail.wxml-->
+<!-- <navHead title='商品详情'></navHead> -->
+<import src="../../../wxParse/wxParse.wxml"/> 
+<view hidden='{{!goods}}'>
+<view class="dSwiper" style="postion:relative">
+  <!-- <button class="share-btn" open-type="share"></button> -->
+  <swiper indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+            bindchange='swiperChange'
+  >
+      <block wx:for="{{gallery}}">
+          <swiper-item bindtap="previewImage" data-current="{{item.image_url}}" style="background-image:url({{item.image_url}})">
+          </swiper-item>
+      </block>
+  </swiper>
+  <view class="showNum">{{currentSwiper}}/{{gallery.length}}</view>
+</view>
+<view class="container">
+    <view class="dTitle">{{goods.goods_name}}</view>
+    <!-- <view class="dDesc">{{goods.goods_remark}}</view> -->
+    <view class="dPrice" style="font-size:28rpx;color:rgba(240,155,55,1);">{{goods.integral_count}}积分
+        <view style="transform: translateY(10rpx);font-size:24rpx;">￥{{goods.market_price}}</view>
+    </view>
+</view>
+
+<!-- 优惠
+<view class="discount-box">
+  <view class="discount-title">优惠</view>
+  <view class="discount-content">
+    <view class="discount-text">领券后更优惠</view>
+    <view class="discount-lq">领券
+      <image src="../../images/comment.png"></image>
+    </view>
+  </view>
+</view> -->
+
+<!-- 活动
+<view class="activity">
+  <view class="activity-title">活动</view>
+  <view class="activity-content">
+    <view class="activity-item">
+      <image class="arrow" src="../../images/comment.png"></image>
+      <view class="ac-item-left">
+        <text>积分</text>
+        下单消费可获得积分在积分商城兑换礼品
+      </view>
+    </view>
+    <view class="activity-item" style="border-top:2rpx solid #F6F6F6">
+      <image class="arrow" src="../../images/comment.png"></image>
+      <view class="ac-item-left">
+        <text>先到先得</text>
+        现在下单消费60元以上即有资格参加活动
+      </view>
+    </view>
+  </view>
+</view> -->
+
+
+<view class="grayBlock"></view>
+
+<!-- 商品评价
+<view class="container detailShopping">
+    <view class="pubTitle">
+        <view></view>
+        商品评价
+    </view>
+    <view class='comment' bindtap='goComment' style="line-height: 40rpx">
+        查看全部评价
+        <image src='../../images/comment.png'></image>
+    </view>
+</view>
+<view class="grayBlock"></view> -->
+
+<view class="detailShopping container">
+    <view class="pubTitle">
+        <view></view>
+        商品详情
+    </view>
+</view>
+<view class="dDetail">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+<!-- <view class="grayBlock"></view> -->
+
+<!-- 店铺信息
+<view class="container" style="margin:40rpx auto">
+    <view class="pubTitle">
+        <view></view>
+        店铺信息
+    </view>
+    <navigator class="store-content" url="/pages/store/index/index?id={{goods.shop_id}}">
+      <image class="store-logo" src="{{shopMsg.shop_head_img}}"></image>
+      <view class="store-text">
+        <view class="store-name">{{shopMsg.shop_name}}</view>
+        <view class="store-address">{{shopMsg.shop_address_city +shopMsg.shop_address_street}}</view>
+        <image class="store-arrow" src="../../images/comment.png"></image>
+      </view>
+    </navigator>
+</view> -->
+
+<!-- <view class="grayBlock"></view>
+<view class="container detailShopping">
+<view class="pubTitle">
+        <view></view>
+        推荐商品
+    </view> 
+
+</view>
+
+<view class="container">
+    <scroll-view scroll-x style="width:100%" class="dScroll">
+        <view class='listItem' wx:for="{{proList}}" wx:key='{{index}}'>
+            <navigator url="/pages/detail/detail?id={{item.goods_id}}">
+                <view class='bgImg' style='background-image:url({{item.original_img}})'></view>
+                <view class='con'>
+                    <view class='title'>{{item.goods_name}}</view>
+                    <view class='desc'>{{item.goods_remark}}</view>
+                    <view class='price'>¥{{item.shop_price}}
+                        <view style="transform: translateY(6rpx);">¥{{item.market_price}}</view>
+                    </view>
+
+                </view>
+            </navigator>
+            <view class='carWrapper'>
+              <shopCar orderId='{{item.goods_id}}'></shopCar>
+            </view>
+        </view>
+    </scroll-view>
+</view> -->
+<!-- 加入购物车 -->
+<!-- <joinCar hidden='{{hidden}}' orderId='{{orderId}}' immediately="{{immediately}}"></joinCar>
+
+<view class="dFooterWrapper"></view>
+<view class="dFooter clearfix">
+    <navigator url='/pages/store/index/index?id={{goods.shop_id}}' class="fCar">
+        <image src='../../images/dianpu@2x.png'></image>
+        <view>店铺</view>
+    </navigator>
+    <view class="fLove" bindtap='collectGoods'>
+        <image wx:if='{{is_collect==1}}' src='../../images/love_2.png'></image>
+        <image wx:else src='../../images/love.png'></image>
+        <view>收藏</view>
+    </view>
+    <view class="fJoin" bindtap='showModal' data-immediately="false">加入购物车</view>
+    <view class="fBuy"  bindtap='showModal' data-immediately="true">立即购买</view>
+</view> -->
+
+<view style="height:88rpx;"></view>
+
+<navigator class="dh-btn" url="/pages/integral-shop/order/order?id={{goods_id}}">立即兑换</navigator>
+
+</view>

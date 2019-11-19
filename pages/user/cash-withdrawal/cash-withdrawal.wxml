@@ -1,0 +1,23 @@
+<view>
+  <view class="tx-header">
+    <view>提现至：</view>
+    <image class="weixin_icon" src="/static/images/user/weixin@2x.png"></image>
+    <view>微信钱包</view>
+  </view>
+  <view class="text1">提现积分</view>
+  <view class="jifen-input">
+    <image src="/static/images/user/jifen@2x.png"></image>
+    <input type="number" placeholder="请输入提现积分" bindinput="inputChange"></input>
+  </view>
+  <view class="money">
+    <view class="money_icon">¥</view>
+    <view class="account-money">{{accountMoney}}</view>
+  </view> 
+  <view class="line"></view>
+  <view class="tx-footer">
+    <view>可提现积分：{{totalIntegral}}</view>
+    <view>全部提现</view>
+  </view>
+  <button class="tx-btn">确认提现</button>
+
+</view>

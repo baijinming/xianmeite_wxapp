@@ -1,0 +1,18 @@
+/* pages/brand/brand.wxss */
+.brandSwiper{
+  margin-top: 40rpx;
+  position: relative;
+}
+.brandSwiper:first-child{
+  margin-top: 0;
+}
+.dSwiper{
+  position: relative;
+}
+.brandSwiper .car{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: 60rpx;
+  right: 42rpx;
+}

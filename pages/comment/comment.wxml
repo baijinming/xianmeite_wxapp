@@ -1,0 +1,24 @@
+<!--pages/comment/comment.wxml-->
+<view wx:if='{{comment&&comment.length>0}}'>
+  <view class="grayBlock"></view>
+  <block wx:for='{{comment}}' wx:key='{{index}}'>
+    <view class='commentItem'>
+      <view class='commentHead'>
+        <view wx:if='{{item.goods_rank == 5}}'><image src='/static/images/user/comment/good_checked.png'></image> 好评</view>
+        <view wx:if='{{item.goods_rank == 3}}'><image src='/static/images/user/comment/ordinary_checked.png'></image> 中评</view>
+        <view wx:if='{{item.goods_rank == 1}}'><image src='/static/images/user/comment/bad_chekced.png'></image> 差评</view>
+        <view class='date'>{{item.date}}</view>
+      </view>
+      <view class='commentText'>{{item.content}}</view>
+      <view class='commentImg clearfix'>
+        <view wx:for='{{item.img}}' wx:key='{{index}}' wx:for-item='imgItem'>
+          <image src='{{imgItem}}' bindtap="previewImage" data-current="{{imgItem}}" data-imgList="{{item}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="grayBlock"></view>
+  </block>
+</view>
+
+<view class="no-comment" wx:else>暂无评价</view>
+

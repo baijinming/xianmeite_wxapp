@@ -1,0 +1,49 @@
+<!--components/joinCar/joinCar.wxml-->
+<view class="modal" hidden="{{hidden}}">
+    <view class="container" hidden="{{loaded}}">
+        <view class="content">
+            <view class='mTop mWrapper'>
+              <image class='bgImg' src='{{goods.original_img}}'></image>
+              <view>
+                <view class='mTitle'>{{goods.goods_name}}</view>
+                <view class='mPrice'>￥{{goods.shop_price}} </view>
+                <view class='mUnit'>{{goods.goods_sn}}</view>
+              </view>
+              <image class='close' bindtap='hideModal' src='../../images/close.png'></image>
+            </view>
+            <view class='unit mWrapper' hidden='{{goods_spec.length==0}}'>
+              <view class='mHead'>规格：</view>
+              <block wx:for='{{goods_spec}}' wx:key='{{index}}'>
+                <view class='speclist'>
+                  <view class='specName'>{{item.name}}</view>
+                  <view class='unList'>
+                    <view bindtap='changeChecked' 
+                          data-index='{{index}}' 
+                          data-valindex='{{valindex}}' 
+                          wx:for='{{item.values}}' 
+                          wx:for-item='val' 
+                          wx:for-index='valindex' 
+                          wx:key='{{index}}'
+                          class='{{val.checked?"active":""}}'
+                          >
+                          {{val.item}}
+                      </view>
+                  </view>
+                </view>
+              </block>
+              
+            </view>
+             <view class='mWrapper calcWrapper'>
+                <view class='mHead'>购买数量：</view>
+                <view class='calc'>
+                  <view class='reduce' bindtap='calcReduce'>-</view>
+                  <view class='num'>{{num}}</view>
+                  <view class='add' bindtap='calcAdd'>+</view>
+                </view>
+              </view>
+        </view>
+        <view class='modal-btn-wrapper'>
+            <view class='confirm-btn' bindtap='confirmBtn'>确认</view>
+        </view>
+    </view>
+</view>

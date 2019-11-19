@@ -1,0 +1,11 @@
+<view class="integral-list-container">
+  <navigator class="item" wx:for="{{list}}" wx:key="index" url="/pages/integral-shop/detail/detail?id={{item.goods_id}}">
+    <image class="shop-img" mode="aspectFill" src="{{item.original_img}}"></image>
+    <view class="shop-name">{{item.goods_name}}</view>
+    <view class="shop-price">
+      <view class="integral">{{item.integral_count}}积分</view>
+      <view class="price">¥{{item.market_price}}</view>
+    </view>
+  </navigator>
+  <view wx:if="{{!list[0]}}" class="noShop">暂无相关商品</view>
+</view>

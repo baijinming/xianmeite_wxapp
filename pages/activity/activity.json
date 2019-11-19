@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "joinCar": "/components/joinCar/joinCar"
+  },
+  "navigationBarTitleText": "特色中心",
+  "enablePullDownRefresh": true
+}

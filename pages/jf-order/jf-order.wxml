@@ -1,0 +1,71 @@
+<view class='container'>
+  <view class='nav'>
+    <view class='nav-item {{currentTab == 0 ? "checked" : ""}}' bindtap='navSwitch' data-current='0'>全部</view>
+    <!-- <view class='nav-item {{currentTab == 1 ? "checked" : ""}}' bindtap='navSwitch' data-current='1'>待付款</view> -->
+    <view class='nav-item {{currentTab == 2 ? "checked" : ""}}' bindtap='navSwitch' data-current='2'>待发货</view>
+    <view class='nav-item {{currentTab == 3 ? "checked" : ""}}' bindtap='navSwitch' data-current='3'>待收货</view>
+    <view class='nav-item {{currentTab == 4 ? "checked" : ""}}' bindtap='navSwitch' data-current='4'>已收货</view>
+  </view>
+  <view style='height: 65rpx;'></view>
+
+  <view class='no-order' wx:if="{{noOrder}}">
+    <image class='noOrder-img' src='/static/images/user/order/order@2x.png'></image>
+    <view class='text'>您还没有相关的订单</view>
+    <navigator class='btn' url="/pages/index/index" open-type="switchTab" class='btn'>去逛逛</navigator>
+  </view>
+
+  <!-- 待付款 -->
+  <view class='order-item' wx:for="{{waitPay}}" wx:key="index">
+    <view class='order-type'>待付款</view>
+    <view class='order-time'>{{item.time_str}}</view>
+    <view class='order-goods'>
+      <image wx:for="{{item.goods_list}}" wx:key="index" src='{{item.original_img}}'></image>
+    </view>
+    <view class='order-amount'>支付：¥{{item.order_amount}}</view>
+    <view class='button-groups'>
+      <view class='btn' bindtap="goPay" data-sn="{{item.order_sn}}">去付款</view>
+      <view class='btn' bindtap="delOrder" data-id="{{item.order_id}}">取消订单</view>
+    </view>
+  </view>
+
+  <!-- 待发货 -->
+  <view class='order-item' wx:for="{{waitSend}}" wx:key="index">
+    <view class='order-type'>待发货</view>
+    <view class='order-time'>{{item.time_str}}</view>
+    <view class='order-goods'>
+      <image src='{{item.goods_data.original_img}}'></image>
+    </view>
+    <!-- <view class='order-amount'>支付：¥{{item.order_amount}}</view> -->
+    <view class='button-groups'>
+      <view class='btn' bindtap="remindSend">提醒发货</view>
+    </view>
+  </view>
+
+  <!-- 待收货 -->
+  <view class='order-item' wx:for="{{waitReceive}}" wx:key="index">
+    <view class='order-type'>待收货</view>
+    <view class='order-time'>{{item.time_str}}</view>
+    <view class='order-goods'>
+      <image src='{{item.goods_data.original_img}}'></image>
+    </view>
+    <!-- <view class='order-amount'>支付：¥{{item.order_amount}}</view> -->
+    <view class='button-groups'>
+      <view class='btn' bindtap="sureReceive" data-id="{{item.order_id}}" data-goods_id="{{item.goods_list[0].goods_id}}">确认收货</view>
+      <!-- <navigator class='btn' url="/pages/user/logistics/logistics?id={{item.order_id}}">查看物流</navigator> -->
+    </view>
+  </view>
+
+  <!-- 待评价 -->
+  <view class='order-item' wx:for="{{waitComment}}" wx:key="index">
+    <view class='order-type'>已收货</view>
+    <view class='order-time'>{{item.time_str}}</view>
+    <view class='order-goods'>
+      <image src='{{item.goods_data.original_img}}'></image>
+    </view>
+    <!-- <view class='order-amount'>支付：¥{{item.order_amount}}</view> -->
+    <!-- <view class='button-groups'>
+      <navigator  url="/pages/user/order-shop/order-shop?order_id={{item.order_id}}" class='btn'>去评价</navigator>
+    </view> -->
+  </view>
+
+</view>

@@ -1,0 +1,4 @@
+
+<view class="warper">
+  <city-list data="{{city}}" my-city="北京" config="{{config}}"></city-list>
+</view>

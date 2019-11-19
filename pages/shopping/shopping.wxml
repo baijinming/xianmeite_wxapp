@@ -1,0 +1,88 @@
+<!--pages/shopcar/shopcar.wxml-->
+<!-- <navHead></navHead> -->
+<view class="shopcarWrapper">
+  <view  wx:if='{{list.length>0}}'>
+    <view class="delPro" bindtap="delPro">删除商品</view>
+    <view class="container carList">
+      <view class="storeItem" wx:for='{{list}}' wx:key='{{idx}}' wx:for-index="idx" wx:for-item="itemContent">
+        <view class="carItem store-title">
+          <view class="checkbox">
+            <image wx:if="{{itemContent.checked}}" class="radio" 
+                  src='../../images/gou@2x.png'  bindtap='changeChecked' 
+                  data-stindex='{{idx}}'>
+            </image>
+            <image wx:else class="radio" 
+                  src='../../images/gou.png' bindtap='changeChecked' 
+                  data-stindex='{{idx}}'>
+            </image>
+          </view>
+          <image class="store_icon" src="/images/store_icon.png"></image>
+          <navigator class="store-text" url="/pages/store/index/index?id={{itemContent.shop_id}}">{{itemContent.shop_name}} ></navigator>
+        </view>
+        <view class="carItem" wx:for='{{itemContent.cartList}}' wx:key='{{index}}'>
+          <view class="checkbox">
+            <image wx:if="{{item.checked}}" class="radio" 
+                  src='../../images/gou@2x.png'  bindtap='changeChecked' 
+                  data-index='{{index}}' data-stindex='{{idx}}'>
+            </image>
+            <image wx:else class="radio" 
+                  src='../../images/gou.png' bindtap='changeChecked' 
+                  data-index='{{index}}' data-stindex='{{idx}}'>
+            </image>
+          </view>
+          <view class="bgImg" 
+                style="background-image:url({{item.original_img}})">
+          </view>
+          <view class="con">
+            <view class="pubTitle">{{item.goods_name}}</view>
+            <view class="pubPrice clearfix">
+            ￥{{item.goods_price}}<view>￥{{item.market_price}}</view>
+            <view class="calc">
+              <view class="reduce" bindtap="reduce" data-index='{{index}}' data-stindex='{{idx}}'>-</view>
+              <text>{{item.goods_num}}</text>
+              <view class="plus" bindtap="plus" data-index='{{index}}' data-stindex='{{idx}}'>+</view>
+            </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:else>
+    <image src='../../images/shoppingcart.png'></image>
+    <view>您还没有相关的商品</view>
+    <button bindtap='goHome'>去逛逛</button>
+  </view>
+</view>
+
+
+<!-- 推荐商品 -->
+<view>
+<view class='headTitle'>
+<view class='line line1'></view>
+<view class='line line2'></view>
+猜你喜欢
+<view class='line line2'></view>
+<view class='line line1'></view>
+</view>
+</view>
+
+<!-- 推荐商品列表 -->
+<view class='proList clearfix'>
+  <block wx:for="{{proList}}"  wx:key='{{index}}'>
+    <product source='{{item}}'></product>
+  </block>
+</view>
+<view class="botWrapper"></view>
+<!-- 结算 -->
+<view class="botBtns">
+  <label class="checkbox">
+    <checkbox/>
+    <image wx:if='{{checkedAll}}' class="radio" src='../../images/gou@2x.png' bindtap="checkedAllList"></image>
+    <image wx:else class="radio" src='../../images/gou.png' bindtap="checkedAllList"></image>
+    全选
+  </label>
+  <view class="total">总计:<text>￥{{total}}</text></view>
+  <button bindtap='goPay'>去结算</button>
+</view>

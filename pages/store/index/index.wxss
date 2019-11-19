@@ -1,0 +1,94 @@
+.header {
+  background-image: url('https://dstest.pxuc.com.cn/Public/imgs/store_bg.png');
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden
+}
+
+.collect {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  color: #F09B37;
+  font-size: 10px;
+  background-color: #fff;
+  padding: 5rpx 15rpx;
+  border-radius: 15rpx;
+}
+
+.collected {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  color: #fff;
+  font-size: 10px;
+  background-color: #F09B37;
+  padding: 5rpx 15rpx;
+  border-radius: 15rpx;
+}
+
+.store-avatar {
+  width:100rpx;
+  height:100rpx;
+  border-radius:50%;
+  margin: 55rpx auto 30rpx;
+  display: block
+}
+
+.store-name {
+  font-size: 16px;
+  text-align: center;
+  color: #fff
+}
+
+.store-addre {
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  margin: 12rpx 0 50rpx;
+}
+
+.select-tab {
+  padding: 0 30rpx;
+  line-height: 96rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: #666
+}
+
+.select-cheked {
+  color: #F80000
+}
+
+.select-tab view {
+  display: flex;
+}
+
+.arrow-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 26rpx;
+  margin-left: 4rpx
+}
+
+.arrow-up {
+  border: 10rpx solid transparent;
+  border-bottom: 10rpx solid #666;
+  margin-bottom: 6rpx;
+}
+
+.arrow-up-checked {
+  border-bottom: 10rpx solid #F80000;
+}
+
+.arrow-down {
+  border: 10rpx solid transparent;
+  border-top: 10rpx solid #666
+}
+
+.arrow-down-checked {
+  border-top: 10rpx solid #F80000;
+}

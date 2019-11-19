@@ -1,0 +1,9 @@
+<view class='container'>
+  <image class='logo' src='/static/images/logo.jpg'></image>
+  <view class='name'>鲜美特</view>
+  <view class='line'></view>
+  <view class='text1'>登录后开发者将获得以下权限</view>
+  <view class='text2'>获得你的公开信息（昵称、头像等）</view>
+  <button class='loginBtn' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+  <button class="loginBtn refuse-login" bindtap="refuse">暂不登录</button>
+</view>

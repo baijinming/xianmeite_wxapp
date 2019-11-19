@@ -1,0 +1,34 @@
+<view class='container'>
+  <view class='comment-choose'>
+    <view class='choose-item' bindtap='choosePj' data-index='5'>
+      <image src='/static/images/user/comment/{{comment_index == 5 ? "good_checked" : "good"}}.png'></image>
+      <view class='{{comment_index == 5 ? "cheked" : ""}}'>好评</view>
+    </view>
+    <view class='choose-item' bindtap='choosePj' data-index='3'>
+      <image src='/static/images/user/comment/{{comment_index == 3 ? "ordinary_checked" : "ordinary"}}.png'></image>
+      <view class='{{comment_index == 3 ? "cheked" : ""}}'>中评</view>
+    </view>
+    <view class='choose-item' bindtap='choosePj' data-index='1'>
+      <image src='/static/images/user/comment/{{comment_index == 1 ? "bad_chekced" : "bad"}}.png'></image>
+      <view class='{{comment_index == 1 ? "cheked" : ""}}'>差评</view>
+    </view>
+  </view>
+
+  <view class='comment-content'>
+    <textarea class='comment-text' bindblur="getContent" placeholder='请在此评价'/>
+    <view class='comment-img'>
+      <image wx:for="{{imgList}}" wx:key="index" class='photo' src='{{item}}'></image>
+      <view wx:if="{{!lock}}" class='upload-box' bindtap='chooseImg'>
+        <image src='/static/images/user/comment/camera.png'></image>
+        <view>上传照片</view>
+      </view>
+    </view>
+  </view>
+
+  <label class='anonymous-choose' bindtap='switch'>
+    <radio color='#F09B37' checked='{{anonymous}}'></radio>
+    <view>匿名评价</view>
+  </label>
+
+  <view class='tj-btn' bindtap="addComment">提交评价</view>
+</view>

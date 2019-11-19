@@ -1,0 +1,45 @@
+<!--pages/productType/proType.wxml-->
+<!-- <navHead></navHead> -->
+<view class='container'>
+  <image class="index-logo" src="/static/images/logo_x.jpg"></image>
+  <view class="position" bindtap="goCity">{{city}}
+      <image src='../../images/arrow_down.png'></image>
+  </view>
+  <navigator url='/pages/search/search' style="flex:1">
+    <view class="wxSearch">
+      <input class='searchInput' style="border-radius:30rpx;" placeholder="输入你要找的商品" />
+    </view>
+  </navigator>
+</view>
+<view class="proTypeWrapper">
+  <scroll-view class="proType" scroll-y >
+      <view class="scroll-view-item {{categoryId==item.id?'active':''}}" wx:for='{{type}}'
+      data-index='{{index}}'
+      data-id='{{item.id}}'
+      bindtap="getCategoryList"
+      >{{item.mobile_name}}</view>
+  </scroll-view>
+
+<scroll-view class="proListScroll" scroll-y bindscrolltolower='goPage'>
+    <view class="proList proTypeList clearfix" wx:if='{{list&&list.length>0}}'>
+      <view class='listItem' wx:for='{{list}}'>
+      <navigator url="/pages/detail/detail?id={{item.goods_id}}">
+        <view class="bgImg" style="background-image:url({{item.original_img}})"></view>
+        <view class='proCon'>
+            <view class='pubTitle'>{{item.goods_name}}</view>
+            <view class='pubDesc'>{{item.goods_remark}}</view>
+            <view class='pubPrice'>¥{{item.shop_price}}
+                    <view>¥{{item.market_price}}</view></view>
+        </view>
+        </navigator>
+        <!-- <view class='carWrapper carWrapper-protype'>
+            <shopCar orderId='{{item.goods_id}}' bindmyevent="onMyEvent"></shopCar>
+        </view> -->
+      </view>
+    </view>
+    <empty wx:else></empty>
+    <view hidden='{{list.length==0}}'>
+      <view class='allLoaded' hidden='{{!allLoaded}}'>没有更多数据了～</view>
+    </view>
+  </scroll-view>
+</view>

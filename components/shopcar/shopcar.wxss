@@ -1,0 +1,5 @@
+/* components/shopcar/shopcar.wxss */
+.shopCar,.pubShopCar{
+  width: 70rpx;
+  height: 70rpx;
+}

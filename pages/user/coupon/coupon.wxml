@@ -1,0 +1,11 @@
+<view>
+  <view class="coupon" wx:for="{{list}}" wx:key="index">
+    <view class="text1">¥ <text>{{item.money}}</text> </view>
+    <view class="text2">
+      <view class="title1">满{{item.condition}}使用</view>
+      <view class="title2">全场通用</view>
+    </view>
+    <view class="text3" bindtap="goIndex">立即使用</view>
+  </view>
+  <view wx:if="{{!list[0]}}" class="no-coupon">暂无优惠券</view>
+</view>

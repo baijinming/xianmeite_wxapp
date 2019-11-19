@@ -1,0 +1,19 @@
+<view class='container'>
+  <view class='title'>
+    <navigator class="cash-withdrawal" url="/pages/user/cash-withdrawal/cash-withdrawal?integral={{totalIntergral}}">提现</navigator>
+    <view class="integral-box">
+      <view class="text1">当前积分</view>
+      <view class="now-integral">{{totalIntergral}}</view>
+    </view>
+    <view class="total-integral">累计积分{{allIntegral}}</view>
+  </view>
+  <view class='detaile-waper'>
+    <view class='item' wx:for="{{list}}" wx:key="index">
+      <view class='left'>
+        <view class='operation'>{{item.msg}}</view>
+        <view class='time'>{{item.change_time_str}}</view>
+      </view>
+      <view class='right'>{{item.pay_points}}积分</view>   
+    </view> 
+  </view>
+</view>

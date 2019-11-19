@@ -1,0 +1,84 @@
+.card {
+  width: 700rpx;
+  height: 350rpx;
+  padding: 70rpx 70rpx 0;
+  box-sizing: border-box;
+  margin: 40rpx auto 0;
+  display: flex;
+  position: relative
+}
+
+.card .card_bg {
+  width: 700rpx;
+  height: 350rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1
+}
+
+.card .pentagon {
+  width: 95rpx;
+  height: 95rpx;
+  margin-right: 30rpx;
+}
+
+.card-title {
+  height: 95rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+
+}
+
+.card-title .card-title1 {
+  font-size: 18px;
+}
+
+.card-title .card-title2 {
+  font-size: 12px;
+}
+
+.member-title {
+  color: #333333;
+  font-size: 18px;
+  margin: 70rpx auto 50rpx;
+  text-align: center
+}
+
+.equity {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.equity .equity-item {
+  width: 280rpx;
+  display: flex;
+  margin: 0 20rpx 60rpx 60rpx;
+
+}
+
+.equity-icon {
+  width: 91rpx;
+  height: 106rpx;
+  margin-right: 30rpx;
+}
+
+.equity-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: #333333;
+  justify-content: space-between
+}
+
+.text1 {
+  font-size: 30rpx;
+}
+
+.text2 {
+  font-size: 24rpx;
+}

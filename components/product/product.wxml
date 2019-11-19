@@ -1,0 +1,17 @@
+<!--components/product/product.wxml-->
+<view class='listItem'>
+  <navigator url="/pages/detail/detail?id={{source.goods_id}}">
+    <view class='bgImg' 
+          style='background-image:url({{source.original_img}})'>
+    </view>
+    <view class='con'>
+      <view class='title'>{{source.goods_name}}</view>
+      <view class='desc'>{{source.goods_remark}}</view>
+      <view class='price'>¥{{source.shop_price}} <view>¥{{source.market_price}}</view> </view>
+    </view>
+  </navigator>
+  <!-- <view class='carWrapper'>
+    <shopCar orderId='{{source.goods_id}}'></shopCar>
+  </view> -->
+</view>
+

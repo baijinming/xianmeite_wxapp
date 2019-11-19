@@ -1,0 +1,225 @@
+<view class='container'>
+  <view class='navBar'>
+    <view class='{{nav_index == 1 ? "nav-item checked" : "nav-item"}}' bindtap='nabSwitch' data-index='1'>先到先得</view>
+    <view class='{{nav_index == 2 ? "nav-item checked" : "nav-item"}}' bindtap='nabSwitch' data-index='2'>积分商城</view>
+  </view>
+
+  <!-- 先到先得 -->
+  <view wx:if="{{nav_index == 1}}" style="position:relative">
+    <!-- 暂无活动 -->
+    <view wx:if="{{!ac_list && !now_acContent}}" class='no-activity'>
+      <image class='activity_icon' src='/static/images/activity/activity_icon.png'></image>
+      <view>暂无活动</view>
+    </view>
+    <!-- 有活动 -->
+    <view wx:else>
+      <!-- 活动banner图 -->
+      <view class="ac-header">
+        <!-- <navigator class="ac-rule" url="/pages/ac-relevant/rule/rule">活动规则</navigator> -->
+      </view>
+      <!-- 活动列表 -->
+      <view class="ac-list" wx:if="{{!now_acContent}}">  
+        <view class="ac-list-item" wx:for="{{ac_list}}" wx:key="index">
+          <image class="ac-item-img" src="{{item.original_img}}"></image>
+          <view class="ac-item-text">
+            <view>奖品：{{item.goods_name}}</view>
+            <view>组织时间：{{item.wait_time}}天</view>
+            <view>比赛时间：{{item.conduct_time}}天</view>
+            <view>所需参赛人数：{{item.need_number}}人</view>
+          </view>
+          <view wx:if="{{!item.isRace && !item.isOrganize}}" class="openAc-btn" bindtap="joinAc" data-goods_id="{{item.spell_goods_id}}">开启活动</view>
+          <view wx:if="{{item.isOrganize}}" class="openAc-btn" bindtap="joinAc" data-goods_id="{{item.spell_goods_id}}">参加活动</view>
+          <view wx:if="{{item.isRace}}" class="race-title">活动进行中</view>
+        </view>
+      </view>
+      <!-- 活动组织阶段 -->
+      <view class="ac-organizing" wx:if="{{now_acContent && !is_start && !is_end && !isInvalid}}">
+        <view class="ac-prize">
+          <image class="prize-img" src="{{now_acContent.goods_data.original_img}}"></image>
+          <view class="prize-content">
+            <view>奖品：{{now_acContent.goods_data.goods_name}}</view>
+            <view>组织时间：{{organization_time}}</view>
+            <view>比赛时间：{{match_day}}天</view>
+            <view>所需参赛人数：{{now_acContent.need_number}}人</view>
+          </view>
+        </view>
+        <view class="organizing-pace">
+          <view class="organizing-pace-title">组织进度</view>
+          <view class="organizing-pace-text1">距离活动开始倒计时 <text>{{start_day}}</text>天 <text>{{start_hours}}</text> 小时</view>
+          <view class="organizing-pace-text2">已有 <text>{{now_acContent.project_user_count}}</text> 人参加,还差 <text>{{now_acContent.need_number - now_acContent.project_user_count}}</text> 人参加</view>
+        </view>
+        <view class="organizing-btns">
+          <button wx:if="{{!acid}}" open-type="share">邀请好友</button>
+          <button wx:else bindtap="joinAc">参与活动</button>
+          <form bindsubmit="submitInfo" report-submit='true'>
+            <button form-type="submit">活动开始提醒</button>
+          </form>
+        </view>
+      </view>
+      <!-- 比赛阶段 -->
+      <view class="ac-match" wx:if="{{is_start && !is_end && !isInvalid}}" style="text-align: center;">
+        <view class="ac-prize" style="text-align: left;">
+          <image class="prize-img" src="{{now_acContent.goods_data.original_img}}"></image>
+          <view class="prize-content">
+            <view>奖品：{{now_acContent.goods_data.goods_name}}</view>
+            <view>组织时间：{{organization_time}}</view>
+            <view>比赛时间：{{match_day}}天</view>
+            <view>所需参赛人数：{{now_acContent.need_number}}人</view>
+          </view>
+        </view>
+        <view class="my-score">你在活动比赛中</view>
+        <view class="ac-now" style="font-size:30rpx;padding: 0 50rpx;">我的实时分数：{{now_acContent.point}}</view>
+        <view class="match-now">
+          <view class="match-now-title">得分阶梯表</view>
+          <!-- <view class="match-now-text">每7天更新一次</view> -->
+          <view class="match-table">
+            <view class="match-table-th">
+              <view class="table-th1">得分</view>
+              <view class="table-th2">用户</view>
+              <view class="table-th2">用户</view>
+            </view>
+            <view class="match-table-td" wx:for="{{now_acContent.activity_information.top_list}}" wx:key="index">
+              <view class="table-td1">{{item.name}}</view>
+              <view class="table-td2">
+                <view wx:for="{{item.data}}" wx:key="index">{{item.nickname}}</view>
+              </view>
+            </view>
+          </view>
+          <navigator class="ac-promote" url="/pages/user/recharge/recharge?acid={{now_acContent.spell_project_id}}">
+            <view>使用活动技能提升名次</view>
+            <image class="arrow_icon" src="/static/images/activity/arrow_icon.png"></image>
+          </navigator>
+        </view>
+        <view class="ac-now">离本次活动结束还剩{{end_day}}天{{end_hours}}小时，当前人员活跃度{{now_acContent.activity_information.active_value}}%</view>
+        <view wx:if="{{delay_number > 0}}" class="delayTitle">
+          <view>第{{delay_number}}次人员活跃度少于40%，比赛时间延长5天</view>
+          <view>连续三次活跃度少于40%活动将无效自动结束</view>
+        </view>
+      </view>
+      <!-- 比赛结束 -->
+      <view class="ac-end" wx:if="{{is_end && !isInvalid}}">
+        <view class="ac-prize" style="position:relative">
+          <image class="end_icon" src="/static/images/activity/end_icon.png"></image>
+          <image class="prize-img" src="{{now_acContent.goods_data.original_img}}"></image>
+          <view class="prize-content">
+            <view>奖品：{{now_acContent.goods_data.goods_name}}</view>
+            <view>组织时间：{{organization_time}}</view>
+            <view>比赛时间：{{match_day}}天</view>
+            <view>所需参赛人数：{{now_acContent.need_number}}人</view>
+          </view>
+        </view>
+        <view class="match-endTitle">恭喜比赛第一名获得奖品</view>
+        <view class="match-reuslt">
+          <view class="ac-end-title">比赛结果展示</view>
+          <view class="ac-end-table">
+            <view class="end-table-th">
+              <view class="table-th1">排名</view>
+              <view class="table-th2">用户</view>
+              <view class="table-th3">得分详情</view>
+            </view>
+            <view class="end-table-td" wx:for="{{now_acContent.activity_settlement_information.top_list}}" wx:key="index">
+              <view class="table-td1">{{index + 1}}</view>
+              <view style="flex:1;display:flex;">
+                <view class="table-td2" style="position:relative">
+                  <view style="position:absolute;top:50%;transform:translateY(-50%)">{{item.nickname}}</view>
+                </view>
+                <view class="table-td3">
+                  <view class="table-td3-td1">
+                    <view class="table-td3-tdText1">消费得分</view>
+                    <view class="table-td3-tdText2">{{item.shopping_value}}</view>
+                  </view>
+                  <view class="table-td3-td1">
+                    <view class="table-td3-tdText1">充值得分</view>
+                    <view class="table-td3-tdText2">{{item.recharge_value}}</view>
+                  </view>
+                  <view class="table-td3-td1">
+                    <view class="table-td3-tdText1">扣除分数</view>
+                    <view class="table-td3-tdText2 table-td3-reduce">
+                      <view class="table-td3-reduce1">-{{item.deduction_value}}</view>
+                      <view class="table-td3-reduce2">
+                        <view wx:for="{{item.deduction_list}}" wx:key="index">{{item.add_time_str}} {{item.content}}</view>
+                      </view>
+                    </view>
+                  </view>
+                  <view class="table-td3-td1">
+                    <view class="table-td3-tdText1">总得分</view>
+                    <view class="table-td3-tdText2">{{item.shopping_value + item.recharge_value - item.deduction_value}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="hasKnow" bindtap="joinOther">我知道了</view>
+      </view>
+      <!-- 比赛失效 -->
+      <view class="ac-end" wx:if="{{isInvalid}}">
+        <view class="ac-prize" style="position:relative">
+          <image class="end_icon" src="/static/images/activity/invalid.png"></image>
+          <image class="prize-img" src="{{now_acContent.goods_data.original_img}}"></image>
+          <view class="prize-content">
+            <view>奖品：{{now_acContent.goods_data.goods_name}}</view>
+            <view>组织时间：{{organization_time}}</view>
+            <view>比赛时间：{{match_day}}天</view>
+            <view>所需参赛人数：{{now_acContent.need_number}}人</view>
+          </view>
+        </view>
+        <view class="invalid-box">
+          <view class="invalid-box-text1">本次活动比赛无效</view>
+          <view class="invalid-box-text2">请关注其他比赛</view>
+          <view class="invalid-box-text2">祝您早日赛出第1名，把大奖拿回家</view>
+        </view>
+        <view class="joinOther" bindtap="joinOther">参与其他比赛</view>
+      </view>
+
+    </view>
+  </view>
+  
+  <!-- 积分商城 -->
+  <view wx:if="{{nav_index == 2}}" class='integral-shopping'>
+    <image class="integral-shopping-banner" src="https://dstest.pxuc.com.cn/Public/imgs/integral_shop_bg.png"></image>
+    <view class="jfsc-sort">
+      <view class="jfsc-sort-item" wx:for="{{sortList}}" wx:key="index" bindtap="goShopList" data-categoryId="{{item.id}}">
+        <image class="jfsc-sort-icon" src="{{item.image}}"></image>
+        <view class="jfsc-sort-name">{{item.name}}</view>
+      </view>
+    </view>
+    <!-- 为你推荐 -->
+    <view class="recommend">
+      <view class="recommend-title">为你推荐</view>
+      <view class="recommend-you-sort">
+        <view class="recommend-you-sortItem" wx:for="{{label}}" wx:key="index" bindtap="goShopList" data-labelId="{{item.id}}">
+          <image src="{{item.img}}"></image>
+          <view>{{item.name}}</view>
+        </view>
+      </view>
+    </view>
+    <!-- 分类列表 -->
+    <view class="recommend" wx:for="{{labelList}}" wx:key="index" wx:if="{{item.goods_list[0]}}">
+      <view class="more-text" bindtap="goShopList" data-labelId="{{item.id}}">更多 ></view>
+      <view class="recommend-title">{{item.name}}</view>
+      <view class="recommend-shop">
+        <view class="recommend-shop-item" wx:for="{{item.goods_list}}" wx:key="index" bindtap="goDetail" data-id="{{item.goods_id}}">
+          <image class="recommend-shop-item-img" mode="aspectFill" src="{{item.original_img}}"></image>
+          <view class="recommend-shop-item-name">{{item.goods_name}}</view>
+          <view class="recommend-shop-item-price">
+            <view class="integral">{{item.integral_count}}积分</view>
+            <view class="price">¥{{item.market_price}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="noMore-text">没有更多啦~</view>
+  </view>
+</view>
+
+<!-- 领取奖品弹窗 -->
+<view wx:if="{{popupShow}}">
+  <view class="mask" bindtap="closePopup"></view>
+  <view class="popup">
+    <image class="fork-icon" src="/static/images/activity/fork.png" bindtap="closePopup"></image>
+    <view class="popup-title">恭喜您获得奖品!</view>
+    <image class="popup-img" src="/static/images/activity/popup_icon.png"></image>
+    <view class="lq-btn" bindtap="lqBtn">点击领取</view>
+  </view>
+</view>

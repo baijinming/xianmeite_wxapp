@@ -1,0 +1,21 @@
+<!--pages/hotproduct/hotproduct.wxml-->
+<scroll-view class="hotProType" scroll-x style="width: 100%">
+    <view class="scroll-view-item {{item.id==categoryId?'active':''}}" 
+          wx:for='{{type}}'
+          wx:key='index'
+          data-id='{{item.id}}'
+          bindtap='getCategoryList'
+    >{{item.mobile_name}}</view>
+  </scroll-view>
+
+  <view class="typeWrapper"></view>
+
+  <view wx:if='{{proList&&proList.length>0}}' class='proList clearfix'>
+    <block wx:for="{{proList}}"  wx:key='index'>
+      <product source='{{item}}'></product>
+    </block>
+  </view>
+
+  <empty wx:else></empty>
+
+  <view class='allLoaded' hidden='{{!allLoaded}}'>没有更多数据了～</view>

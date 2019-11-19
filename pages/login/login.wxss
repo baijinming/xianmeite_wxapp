@@ -1,0 +1,72 @@
+.container {
+  border-top: 1rpx solid #F6F6F6;
+  overflow: hidden;
+
+}
+
+.logo {
+  width: 136rpx;
+  height: 136rpx;
+  margin: 114rpx auto 16rpx;
+  display: block;
+}
+
+.name {
+  color: #222222;
+  font-size: 16px;
+  text-align: center;
+}
+
+.line {
+  height: 2rpx;
+  width: 690rpx;
+  background-color: #F6F6F6;
+  margin: 70rpx auto 33rpx;
+}
+
+.text1 {
+  color: #222222;
+  font-size: 14px;
+  margin-left: 80rpx;
+}
+
+.text2 {
+  color: #999999;
+  font-size: 12px;
+  margin: 20rpx 0 117rpx 113rpx;
+  position: relative;
+}
+
+.text2::after {
+  content: "";
+  width: 5rpx;
+  height: 5rpx;
+  background-color: #999999;
+  border-radius: 50%;
+  position: absolute;
+  left: -15rpx;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+.loginBtn {
+  background-color: #F09B37;
+  width:588rpx;
+  height:80rpx;
+  border-radius: 10rpx;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 80rpx;
+  text-align: center;
+
+}
+
+.loginBtn::after {
+  border: 0
+}
+
+.refuse-login {
+  background-color: #F6F6F6;
+  color: #222222;
+  margin-top: 30rpx;
+}

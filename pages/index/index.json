@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#F09B37",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "product": "/components/product/product",
+    "shopCar": "/components/shopcar/shopcar"
+  },
+  "enablePullDownRefresh": true
+}

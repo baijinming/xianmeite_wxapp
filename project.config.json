@@ -1,0 +1,803 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.2",
+	"appid": "wx3ea2a23b54e13c6e",
+	"projectname": "%E9%B2%9C%E7%BE%8E%E7%89%B9",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 106,
+			"list": [
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/user/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的消息",
+					"pathName": "pages/user/news/news",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的余额",
+					"pathName": "pages/user/balance/balance",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "余额充值",
+					"pathName": "pages/user/recharge/recharge",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "我的订单",
+					"pathName": "pages/user/order/order",
+					"query": "currentTab=1",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "收货地址",
+					"pathName": "pages/user/address/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加收货地址",
+					"pathName": "pages/user/address/add/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "特色中心",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的收藏",
+					"pathName": "pages/user/collect/collect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商铺入驻",
+					"pathName": "pages/user/shop-entry/shop-entry",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "关于我们",
+					"pathName": "pages/user/about-us/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/user/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登录页",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "评价",
+					"pathName": "pages/user/comment/comment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "我的订单",
+					"pathName": "pages/user/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "活动中心",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单",
+					"pathName": "pages/user/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商铺页面",
+					"pathName": "pages/store/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "店铺首页",
+					"pathName": "pages/store/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商铺入驻",
+					"pathName": "pages/user/shop-entry/shop-entry",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商铺入驻",
+					"pathName": "pages/user/shop-entry/shop-entry",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商铺入驻",
+					"pathName": "pages/user/shop-entry/shop-entry",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/shop-entry/shop-entry",
+					"pathName": "pages/user/shop-entry/shop-entry",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=191",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=191",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/confirmOrder/confirm",
+					"pathName": "pages/confirmOrder/confirm",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的会员",
+					"pathName": "pages/user/member/index/index",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员设置",
+					"pathName": "pages/user/member/set/set",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/collect/collect",
+					"pathName": "pages/user/collect/collect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/cash-withdrawal/cash-withdrawal",
+					"pathName": "pages/user/cash-withdrawal/cash-withdrawal",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classification/classification",
+					"pathName": "pages/classification/classification",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/coupon/coupon",
+					"pathName": "pages/user/coupon/coupon",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/store/index/index",
+					"pathName": "pages/store/index/index",
+					"query": "id=52",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/store/index/index",
+					"pathName": "pages/store/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/rule/rule",
+					"pathName": "pages/ac-relevant/rule/rule",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/store/index/index",
+					"pathName": "pages/store/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/store/index/index",
+					"pathName": "pages/store/index/index",
+					"query": "id=52",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=191",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/collect/collect",
+					"pathName": "pages/user/collect/collect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/collect/collect",
+					"pathName": "pages/user/collect/collect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "nav_index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "nav_index=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/rule/rule",
+					"pathName": "pages/ac-relevant/rule/rule",
+					"query": "nav_index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "nav_index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/member/index/index",
+					"pathName": "pages/user/member/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shopping/shopping",
+					"pathName": "pages/shopping/shopping",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/confirmOrder/confirm",
+					"pathName": "pages/confirmOrder/confirm",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "nav_index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "nav_index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "nav_index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "nav_index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "nav_index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "nav_index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "nav_index=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "acid=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "acid=193",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/confirmLqOrder/confirmLqOrder",
+					"pathName": "pages/confirmLqOrder/confirmLqOrder",
+					"query": "id=193",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "id=193",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "acid=193&money=300",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "acid=193&money=200",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "acid=193&money=300",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/index/index",
+					"pathName": "pages/user/index/index",
+					"query": "acid=193&money=300",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-order/ac-order",
+					"pathName": "pages/ac-order/ac-order",
+					"query": "acid=193&money=300",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/coupon/coupon",
+					"pathName": "pages/user/coupon/coupon",
+					"query": "acid=193&money=300",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/confirmRpOrder/confirmRpOrder",
+					"pathName": "pages/confirmRpOrder/confirmRpOrder",
+					"query": "immediately=true",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=191",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "acid=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/newDiscount/discount",
+					"pathName": "pages/newDiscount/discount",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/newDiscount/discount",
+					"pathName": "pages/newDiscount/discount",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/member/index/index",
+					"pathName": "pages/user/member/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/newDiscount/discount",
+					"pathName": "pages/newDiscount/discount",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/rule/rule",
+					"pathName": "pages/ac-relevant/rule/rule",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/index/index",
+					"pathName": "pages/user/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/member/set/set",
+					"pathName": "pages/user/member/set/set",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/ac-relevant/skill/skill",
+					"pathName": "pages/ac-relevant/skill/skill",
+					"query": "acid=27&money=300",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "acid=27&money=300",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/activity/activity",
+					"pathName": "pages/activity/activity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/order/order",
+					"pathName": "pages/user/order/order",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=3",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/w",
+					"pathName": "pages/web-view/web-view",
+					"scene": null
+				}
+			]
+		}
+	}
+}

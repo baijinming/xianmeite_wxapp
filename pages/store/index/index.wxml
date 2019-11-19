@@ -1,0 +1,37 @@
+<view class="store-container">
+  <view class="header">
+    <view wx:if="{{!isCollect}}" class="collect" bindtap="collect">收藏</view>
+    <view wx:else class="collected">已收藏</view>
+    <image class="store-avatar" src="{{shopMsg.shop_head_img}}"></image>
+    <view class="store-name">{{shopMsg.shop_name}}</view>
+    <view class="store-addre">{{shopMsg.shop_address_city +shopMsg.shop_address_street}}</view>
+  </view>
+  <view class="select-tab">
+    <view class="{{condition == 1 ? 'select-cheked' : ''}}" bindtap="switch" data-index="1">综合</view>
+    <view class="{{condition == 2 ? 'select-cheked' : ''}}" bindtap="switch" data-index="2">销量
+      <view wx:if="{{condition == 2}}" class="arrow-group">
+        <view class="{{isOrder ? 'arrow-up' : 'arrow-up arrow-up-checked'}}"></view>
+        <view class="{{isOrder ? 'arrow-down arrow-down-checked' : 'arrow-down'}}"></view>
+      </view>
+      <view wx:else class="arrow-group">
+        <view class="arrow-up"></view>
+        <view class="arrow-down"></view>
+      </view>
+    </view>
+    <view class="{{condition == 3 ? 'select-cheked' : ''}}" bindtap="switch" data-index="3">价格
+      <view wx:if="{{condition == 3}}" class="arrow-group">
+        <view class="{{isOrder ? 'arrow-up' : 'arrow-up arrow-up-checked'}}"></view>
+        <view class="{{isOrder ? 'arrow-down arrow-down-checked' : 'arrow-down'}}"></view>
+      </view>
+      <view wx:else class="arrow-group">
+        <view class="arrow-up"></view>
+        <view class="arrow-down"></view>
+      </view>
+    </view>
+  </view>
+  <view class='proList'>
+    <block wx:for="{{proList}}"  wx:key='{{index}}'>
+      <product source='{{item}}'></product>
+    </block>
+  </view>
+</view>

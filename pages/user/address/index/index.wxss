@@ -1,0 +1,146 @@
+.container {
+  border-top: 1rpx solid #F6F6F6;
+  padding-bottom: 88rpx;
+  background-color: #F6F6F6;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden
+}
+
+.item {
+  overflow: hidden;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.header {
+  margin: 43rpx 30rpx 28rpx;
+  color: #253040;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.address {
+  color: #666666;
+  font-size: 12px;
+  padding: 0 100rpx 40rpx 32rpx;
+  border-bottom: 2rpx solid #F0F0F0;
+}
+
+.footer {
+  height: 95rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+
+.footer-left .hook {
+  border: 1rpx solid #999999;
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  overflow: hidden
+}
+
+.footer-left .hook .icon {
+  width: 0;
+  height: 0;
+}
+
+.footer-left .hook .icon-checked {
+  width: 36rpx;
+  height: 36rpx;
+  display: block
+}
+
+.footer-left .hook-checked {
+  border: 0
+}
+
+.footer-left .mr {
+  color: #999999;
+  font-size: 14px;
+  line-height: 95rpx;
+  margin-left: 16rpx;
+}
+
+.footer-left .mr-checked {
+  color: #F09B37
+}
+
+.operation-box {
+  display: flex;
+  color: #999999;
+  font-size: 14px;
+}
+
+.operation-box image {
+  margin: 0 10rpx 0 18rpx;
+}
+
+.operation-box view {
+  height: 95rpx;
+  line-height: 95rpx;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-right: 15rpx;
+}
+
+.edit image {
+  width: 24rpx;
+  height: 30rpx;
+}
+
+.remove image {
+  width: 30rpx;
+  height: 29rpx;
+}
+
+.btn {
+  width: 750rpx;
+  height: 88rpx;
+  color: #fff;
+  background-color: #F09B37;
+  font-size: 16px;
+  line-height: 88rpx;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-radius: 0;
+}
+
+.noaddr-icon {
+  width: 164rpx;
+  height: 164rpx;
+  margin: 245rpx auto 24rpx;
+  display: block
+}
+
+.noaddr-text {
+  color: #9A9A9A;
+  font-size: 12px;
+  text-align: center
+}
+
+.noaddr-btn {
+  background-color: #F09B37;
+  width: 240rpx;
+  height: 76rpx;
+  margin: 100rpx auto 0;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 76rpx;
+  text-align: center;
+  border-radius: 6rpx;
+}

@@ -1,0 +1,48 @@
+.coupon {
+  width: 620rpx;
+  height: 120rpx;
+  margin: 45rpx auto;
+  background-image: url('https://dstest.pxuc.com.cn/Public/imgs/coupon_bg.png');
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.text1 {
+  width: 170rpx;
+  color: #D20A0A;
+  font-size: 34rpx;
+}
+
+.text1 text {
+  font-size: 60rpx;
+}
+
+.text2 {
+  width: 200rpx;
+  margin-right: 60rpx;
+}
+
+.title1 {
+  color: #680202;
+  font-size: 30rpx;
+}
+
+.title2 {
+  color: #680202;
+  font-size: 24rpx;
+}
+
+.text3 {
+  color: #fff;
+  font-size: 28rpx;
+  flex: 1
+}
+
+.no-coupon {
+  font-size: 14px;
+  margin: 100rpx 0;
+  text-align: center;
+  color: #333
+}

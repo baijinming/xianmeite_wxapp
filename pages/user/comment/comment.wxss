@@ -1,0 +1,105 @@
+.container {
+  background-color: #F6F6F6;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.comment-choose {
+  margin: 1rpx 0 20rpx;
+  background-color: #fff;
+  font-size: 12px;
+  color: #999999;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.comment-choose image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 12rpx;
+}
+
+.choose-item {
+  height: 85rpx;
+  display: flex;
+  align-items: center
+}
+
+.choose-item .cheked {
+  color: #222222;
+}
+
+.comment-content {
+  background-color: #fff;
+  padding: 40rpx 64rpx;
+
+}
+
+.comment-text {
+  color: #222222;
+  font-size: 12px;
+  width: 100%;
+  height: 80rpx;
+}
+
+.comment-img {
+  margin-top: 70rpx;
+  display: flex;
+}
+
+.photo {
+  width: 134rpx;
+  height: 134rpx;
+  margin-right: 20rpx;
+}
+
+.upload-box {
+  width: 134rpx;
+  height: 134rpx;
+  border: 1rpx dotted #F2F2F2;
+  color: #C2C2C2;
+  font-size: 12px;
+  text-align: center
+}
+
+.upload-box image{
+  width: 50rpx;
+  height: 41rpx;
+  margin: 33rpx auto 12rpx;
+  display: block;
+}
+
+.anonymous-choose {
+  margin-top: 1rpx;
+  background-color: #fff;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  color: #222222;
+  font-size: 12px;
+  padding-left: 68rpx;
+}
+
+.anonymous-choose radio .wx-radio-input {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.anonymous-choose view {
+  margin-left: 35rpx;
+  color: #222222
+}
+
+.tj-btn {
+  width:588rpx;
+  height:80rpx;
+  background:rgba(240,155,55,1);
+  border-radius:10rpx;
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 16px;
+  text-align: center;
+  margin: 176rpx auto 0
+}

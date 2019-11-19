@@ -1,0 +1,25 @@
+<view>
+  <image class='header-img' src='https://ds.pxuc.com.cn/Public/images/guanyuwomen.jpg'></image>
+  <view class='contact'>
+    <view class='line'></view>
+    <view>联系方式</view>
+  </view>
+  <view class='content'>
+    <view class='item'>
+      <image class='icon' src='/static/images/user/about-us/dianhua-2@2x.png'></image>
+      <view>13601242911</view>
+    </view>
+    <view class='item'>
+      <image class='icon' src='/static/images/user/about-us/youxiang@2x.png'></image>
+      <view>seamete@163.com</view>
+    </view>
+    <view class='item'>
+      <image class='icon' src='/static/images/user/about-us/wangzhi@2x.png'></image>
+      <view>www.xianmeite.com</view>
+    </view>
+    <view class='item'>
+      <image class='icon' src='/static/images/user/about-us/weizhi@2x.png'></image>
+      <view>北京市朝阳区望京中环南路甲2号</view>
+    </view>
+  </view>
+</view>

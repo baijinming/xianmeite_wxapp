@@ -1,0 +1,52 @@
+.integral-list-container {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  width: 335rpx;
+  background-color: #FAFAFA;
+  margin: 30rpx 0;
+}
+
+.shop-img {
+  width: 335rpx;
+  height: 330rpx;
+}
+
+.shop-name {
+  margin: 25rpx 30rpx 29rpx;
+  color: #333333;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.shop-price {
+  margin: 0 30rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.integral {
+  color: #F09B37;
+  font-size: 12px;
+}
+
+.price {
+  color: #9A9A9A;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+
+.noShop {
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  color: #333333;
+  margin-top: 50rpx;
+}

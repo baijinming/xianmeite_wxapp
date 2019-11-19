@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "product": "/components/product/product",
+    "empty": "/components/empty/empty"
+  },
+  "navigationBarTitleText": "热销商品"
+}

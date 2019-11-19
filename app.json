@@ -1,0 +1,98 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classification/classification",
+    "pages/shopping/shopping",
+    "pages/user/index/index",
+    "pages/user/news/news",
+    "pages/user/integral/integral",
+    "pages/user/order/order",
+    "pages/user/address/index/index",
+    "pages/user/address/add/add",
+    "pages/user/footprint/footprint",
+    "pages/user/collect/collect",
+    "pages/user/shop-entry/shop-entry",
+    "pages/user/about-us/list/list",
+    "pages/user/about-us/index/index",
+    "pages/user/about-us/contact/contact",
+    "pages/user/about-us/proposal/proposal",
+    "pages/login/login",
+    "pages/user/comment/comment",
+    "pages/user/logistics/logistics",
+    "pages/activity/activity",
+    "pages/user/address/edit/edit",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/brand/brand",
+    "pages/comment/comment",
+    "pages/newDiscount/discount",
+    "pages/confirmOrder/confirm",
+    "pages/web-view/web-view",
+    "pages/user/order-shop/order-shop",
+    "pages/confirmRpOrder/confirmRpOrder",
+    "pages/confirmLqOrder/confirmLqOrder",
+    "pages/store/index/index",
+    "pages/city/city",
+    "pages/user/member/index/index",
+    "pages/user/member/set/set",
+    "pages/user/cash-withdrawal/cash-withdrawal",
+    "pages/user/coupon/coupon",
+    "pages/ac-relevant/skill/skill",
+    "pages/integral-shop/list/list",
+    "pages/integral-shop/detail/detail",
+    "pages/integral-shop/order/order",
+    "pages/ac-order/ac-order",
+    "pages/jf-order/jf-order",
+    "pages/welfare-detail/welfare-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "鲜美特",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "selectedColor": "#F09B37",
+    "color": "#222222",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/tabBar/home1@2x.png",
+        "selectedIconPath": "static/images/tabBar/home@2x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/classification/classification",
+        "iconPath": "static/images/tabBar/classification1@2x.png",
+        "selectedIconPath": "static/images/tabBar/classification@2x.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "iconPath": "static/images/tabBar/activity1@2x.png",
+        "selectedIconPath": "static/images/tabBar/activity@2x.png",
+        "text": "特色中心"
+      },
+      {
+        "pagePath": "pages/shopping/shopping",
+        "iconPath": "static/images/tabBar/shopping cart1@2x.png",
+        "selectedIconPath": "static/images/tabBar/shopping cart@2x.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/user/index/index",
+        "iconPath": "static/images/tabBar/my1@2x.png",
+        "selectedIconPath": "static/images/tabBar/my@2x.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "需要获取你的地理位置，请确认授权。"
+    }
+  }
+}

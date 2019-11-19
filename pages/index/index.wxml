@@ -1,0 +1,87 @@
+<!--index.wxml-->
+<!-- <navHead type='else'></navHead> -->
+<view class='homeSearch'>
+    <view class='container'>
+      <image class="index-logo" src="/static/images/logo_x.jpg"></image>
+      <view class="position" bindtap="goCity">{{city}}
+          <image src='../../images/arrow.png'></image>
+      </view>
+      <navigator url='/pages/search/search'>
+          <view class='searchCon'>
+              <image src='../../images/search.png'></image>
+              <input type='text' placeholder='输入你要找的商品'></input>
+          </view>
+      </navigator>
+    </view>
+</view>
+<swiper wx:if='{{adlist&&adlist.length>0}}' class='homeBanner' indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{adlist}}" wx:key="index">
+        <swiper-item>
+            <view bindtap="swiperJump" data-url="{{item.ad_link}}" class='bannerBgImg'
+                       style='background-image:url("{{item.ad_code}}")'></view>
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class='typeList clearfix'>
+    <block wx:for="{{typeList}}" wx:key='index' wx:for-item="item">
+    <view class='typeItem'  bindtap='goCategory' data-id='{{item.id}}'>
+        <image src='{{item.image}}' data-id='{{item.id}}'></image>
+        <view data-id='{{item.id}}'>{{item.mobile_name}}</view>
+    </view>
+    </block>
+</view>
+<view class='midItems container clearfix'>
+    <navigator url="/pages/brand/brand" class='midItem midItem1'>
+        <image class="bgImg" src="https://dstest.pxuc.com.cn/Public/imgs/brand-clearance.png"></image>
+    </navigator>
+    <navigator url="/pages/newDiscount/discount" class='midItem midItem2'>
+        <image class="bgImg" src="https://dstest.pxuc.com.cn/Public/imgs/newcomer-benefits.png"></image>
+    </navigator>
+    <navigator url="/pages/hotproduct/hotproduct" class='midItem midItem3'>
+        <image class="bgImg" src="https://dstest.pxuc.com.cn/Public/imgs/hotSale-product.png"></image>
+    </navigator>
+</view>
+
+<!-- 时令水果 -->
+<!-- <view class="fruit" wx:if="{{fruitList[0]}}">
+  <image class="fruit-banner" src="https://dstest.pxuc.com.cn/Public/imgs/fruit.png" bindtap='goCategory' data-id='1'></image>
+  <view class="shop-box">
+    <navigator class="shop-item" wx:for="{{fruitList}}" wx:key="index" url="/pages/detail/detail?id={{item.goods_id}}">
+      <image class="shop-originalImg" src="{{item.original_img}}" mode="aspectFill"></image>
+      <view class="shop-goodsName">{{item.goods_name}}</view>
+      <view class="shop-price">¥{{item.shop_price}} <text class="shop-marketPrice">¥{{item.market_price}}</text></view>
+    </navigator>
+  </view>
+</view> -->
+
+<!-- 鲜美海味 -->
+<!-- <view class="fruit seafood" wx:if="{{seafoodList[0]}}">
+  <image class="fruit-banner" src="https://dstest.pxuc.com.cn/Public/imgs/seafood.png" bindtap='goCategory' data-id='4'></image>
+  <view class="shop-box">
+    <navigator class="shop-item" wx:for="{{seafoodList}}" wx:key="index" url="/pages/detail/detail?id={{item.goods_id}}">
+      <image class="shop-originalImg" src="{{item.original_img}}" mode="aspectFill"></image>
+      <view class="shop-goodsName">{{item.goods_name}}</view>
+      <view class="shop-price">¥{{item.shop_price}} <text class="shop-marketPrice">¥{{item.market_price}}</text></view>
+    </navigator>
+  </view>
+</view> -->
+
+<!-- 推荐商品 -->
+<view wx:if="{{proList.length>0}}">
+    <view class='headTitle'>
+        <view class='line line1'></view>
+        <view class='line line2'></view>
+        为您甄选
+        <view class='line line2'></view>
+        <view class='line line1'></view>
+    </view>
+</view>
+
+<!-- 推荐商品列表 -->
+<view class='proList'>
+    <block wx:for="{{proList}}"  wx:key='{{index}}'>
+      <product source='{{item}}'></product>
+    </block>
+</view>

@@ -1,0 +1,39 @@
+<view class='collect'>
+  <!-- tabBar -->
+  <view class="tabBar">
+    <view class="{{tabBar == 1 ? 'tab-checked' : ''}}" bindtap="switch" data-tab="1">商品收藏</view>
+    <view class="{{tabBar == 2 ? 'tab-checked' : ''}}" bindtap="switch" data-tab="2">店铺收藏</view>
+  </view>
+
+  <!-- 商品收藏 -->
+  <view wx:if="{{tabBar == 1}}" wx:for="{{list}}" wx:key="index" class='item' bindtouchstart='touchStart' bindtouchend='touchEnd' data-index="{{index}}" style='{{left[index]}}'>
+    <image class='sp-img' src='{{item.original_img}}'></image>
+    <view class='sp-content'>
+      <view class='name'>{{item.goods_name}}</view>
+      <view class='desc'>{{item.goods_remark}}</view>
+      <view class='price'>¥{{item.shop_price}}<text>¥{{item.market_price}}</text></view>
+    </view>
+    <navigator class='buy' url="/pages/detail/detail?id={{item.goods_id}}">
+      <image src='/static/images/user/collect/shopping.png'></image>
+    </navigator>
+    <view class='remove-btn' bindtap="removeCollect" data-id="{{item.goods_id}}">删除</view>
+  </view>
+  <!-- 店铺收藏 -->
+  <view wx:if="{{tabBar == 2}}" wx:for="{{list}}" wx:key="index" class='item' bindtouchstart='touchStart' bindtouchend='touchEnd' data-index="{{index}}" style='{{left[index]}}'>
+    <image class='sp-img st-img' src='{{item.shop_head_img}}'></image>
+    <view class='sp-content st-content'>
+      <view class='name' style="color:#222222;font-size:16px;">{{item.shop_name}}</view>
+      <view class='desc' style="margin-top:25rpx;color:#999999;font-size:12px;">{{item.shop_address_city +item.shop_address_street}}</view>
+    </view>
+    <navigator class='arrow' url="/pages/store/index/index?id={{item.id}}">
+      >
+    </navigator>
+    <view class='remove-btn' bindtap="removeCollect" data-id="{{item.id}}">删除</view>
+  </view>
+  <!-- 没有收藏 -->
+  <view wx:if="{{list.length == 0}}" class='no-collect'>
+    <image class='noCollect-img' src='/static/images/user/collect/collect@2x.png'></image>
+    <view class='text'>您还没有相关的收藏</view>
+    <navigator class='btn' url="/pages/index/index" open-type="switchTab">去逛逛</navigator>
+  </view>
+</view>

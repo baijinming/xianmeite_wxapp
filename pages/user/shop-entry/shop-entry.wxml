@@ -1,0 +1,102 @@
+<view class='container'>
+  <!-- 商铺信息表单 -->
+  <view class="form" wx:if="{{shopStatus == -1}}">
+    <form bindsubmit="formSubmit">
+      <view class='form-item'>
+        <view class='title'>店铺名称：</view>
+        <input name="shop_name" placeholder='请输入店铺名称'></input>
+      </view>
+      <view class='form-item'>
+        <view class='title'>店铺所在省市区：</view>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+          <view wx:if="{{region.length == 0}}" style="color:#999999;font-size:14px">请选择省市区</view>
+          <view wx:else>{{region[0]}}{{region[1]}}{{region[2]}}</view>
+        </picker>
+      </view>
+      <view class='form-item'>
+        <view class='title'>店铺详细地址：</view>
+        <input name="shop_address_street" placeholder='请输入店铺详细地址'></input>
+      </view>
+      <!-- <view class='form-item' style="height:150rpx">
+        <view class='title'>店铺简介：</view>
+        <textarea name="shop_intro" placeholder="请对店铺进行简单介绍，15字以内"/>
+      </view> -->
+      <view class='form-item'>
+        <view class='title'>联系人：</view>
+        <input name="shop_user" placeholder='请输入联系人姓名'></input>
+      </view>
+      <view class='form-item'>
+        <view class='title'>联系电话：</view>
+        <input name="shop_tel" placeholder='请输入联系人手机号'></input>
+      </view>
+      <view class='form-item'>
+        <view class='title'>营业执照名称：</view>
+        <input name="license_name" placeholder='请输入营业执照名称'></input>
+      </view>
+      <view class="img-box">
+        <view wx:if="{{!shop_img_show}}" class="img-bg" bindtap="chooseImg" data-type="logo">
+          <image class="add-icon" src="/static/images/user/shop-entry/add.png"></image>
+          <view class="bg-text">上传店铺logo</view>
+        </view>
+        <image class="item-img" wx:if="{{shop_img_show}}" src="{{shop_img_show}}" mode="aspectFill" bindtap="chooseImg" data-type="logo"></image>
+        <view wx:if="{{!license_img_show}}" class="img-bg" bindtap="chooseImg" data-type="license">
+          <image class="add-icon" src="/static/images/user/shop-entry/add.png"></image>
+          <view class="bg-text">上传营业执照</view>
+        </view>
+        <image class="item-img" wx:if="{{license_img_show}}" src="{{license_img_show}}" mode="aspectFill" bindtap="chooseImg" data-type="license"></image>
+      </view>
+      <button class='btn' form-type="submit">提交审核</button>
+    </form>
+  </view>
+  
+  <!-- 审核通过 -->
+  <view class="approved" wx:if="{{shopStatus == 1 && !editPassShow}}">
+    <image class="success_icon" src="/static/images/user/shop-entry/success_icon.png"></image>
+    <view class="approved-text">审核通过，您的商铺入驻成功！</view>
+    <view class="prompt-box">
+      <view class="prompt-text1">请前往后台网址进行店铺管理</view>
+      <view class="prompt-text2">※为了您的店铺安全，初次使用请先修改初始密码</view>
+      <view class="prompt-textBox">
+        <view class="prompt-textBox-name">后台网址</view>
+        <view class="prompt-textBox-content">{{msg.login_url}}</view>
+      </view>
+      <view class="prompt-textBox">
+        <view class="prompt-textBox-name">登录账号</view>
+        <view class="prompt-textBox-content">{{msg.phone}}</view>
+      </view>
+      <view class="prompt-textBox">
+        <view class="prompt-textBox-name">登录密码</view>
+        <view class="prompt-textBox-content">xxxxxx</view>
+        <view class="edit-go" bindtap="editPass">点击修改</view>
+      </view>
+    </view>
+  </view>
+  <!-- 修改密码 -->
+  <view class="edit-password-box" wx:if="{{editPassShow}}">
+    <view class="prompt-textBox editPass-textBox">
+      <view class="prompt-textBox-name editPass-textBox-name">新密码</view>
+      <input bindinput="newPassChange" class="prompt-textBox-input" type="password" placeholder="请输入新密码(6-12位)"></input>
+    </view>
+    <view class="prompt-textBox editPass">
+      <view class="prompt-textBox-name">确认密码</view>
+      <input bindinput="surePassChange" class="prompt-textBox-input" type="password" placeholder="请再次输入新密码"></input>
+    </view>
+    <button class="editPass-btn" bindtap="sureEditBtn">确认修改</button>
+  </view>
+  <!-- 审核未通过 -->
+  <view class="audit-failure" wx:if="{{shopStatus == -2}}">
+    <image class="success_icon" src="/static/images/user/shop-entry/fail_icon.png"></image>
+    <view class="approved-text">对不起，您的商铺未通过审核</view>
+    <view class="prompt-box">
+      <view class="fail-title">失败原因：</view>
+      <view class="fail-reason">1. 营业执照拍摄不清晰；</view>
+    </view>
+    <button class="fillAgain-btn">重新填写</button>
+  </view>
+  <!-- 审核中 -->
+  <view class="wait-examine" wx:if="{{shopStatus == -3}}">
+    <image class="success_icon" src="/static/images/user/shop-entry/wait_icon.png"></image>
+    <view class="approved-text">商铺还在审核中，请耐心等待哦~</view>
+  </view>
+
+</view>

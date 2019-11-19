@@ -1,0 +1,37 @@
+<view class='container'>
+  <view wx:if="{{list[0]}}">
+    <view>
+      <view class='item' wx:for="{{list}}" wx:key="index">
+        <view class='header'>
+          <view>{{item.consignee}}</view>
+          <view>{{item.mobile}}</view>
+        </view>
+        <view class='address'>{{item.province_name}}{{item.city_name}}{{item.district_name}}{{item.address}}</view>
+        <view class='footer'>
+          <view class="footer-left" data-id='{{item.address_id}}' bindtap="radioChange">
+            <view class='{{checkedIndex == index ? "hook hook-checked" : "hook"}}'>
+              <image class='{{checkedIndex == index ? "icon icon-checked" : "icon"}}' src="/images/gou@2x.png"></image>
+            </view>
+            <view class='{{checkedIndex == index ? "mr mr-checked" : "mr"}}'>设为默认</view>
+          </view>
+          <view class='operation-box'>
+            <view class='edit' bindtap="editAddr" data-id="{{item.address_id}}">
+              <image src='/static/images/user/address/edit.png'></image>
+              <view>编辑</view>
+            </view>
+            <view class='remove' bindtap="removeAddr" data-id="{{item.address_id}}">
+              <image src='/static/images/user/address/remove.png'></image>
+              <view>删除</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='btn' bindtap="addAddre">添加收货地址</view>
+  </view>
+  <view wx:else>  
+    <image class="noaddr-icon" src="/static/images/user/address/addr_no.png"></image>
+    <view class="noaddr-text">您还没有添加收货地址</view>
+    <view class='noaddr-btn' bindtap="addAddre">添加收货地址</view>
+  </view>
+</view>

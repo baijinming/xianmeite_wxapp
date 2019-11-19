@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "joinCar": "/components/joinCar/joinCar"
+  }
+}

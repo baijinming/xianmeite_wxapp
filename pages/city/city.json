@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "city-list": "/components/wx-index-list/wx-index-list"
+  },
+  "navigationBarTitleText": "城市定位"
+}

@@ -1,0 +1,91 @@
+.container {
+  background-color: #F6F6F6;
+  min-height: 100vh;
+  width: 100%;
+  border-top: 1rpx solid #DDDDDD;
+  box-sizing: border-box
+}
+
+.title {
+  overflow: hidden;
+  height: 284rpx;
+  background-image: url('https://dstest.pxuc.com.cn/Public/imgs/integral_bg.png');
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.cash-withdrawal {
+  position: absolute;
+  right: 18rpx;
+  top: 20rpx;
+  width: 125rpx;
+  height: 45rpx;
+  color: #C46B12;
+  font-size: 24rpx;
+  padding-top: 8rpx;
+  box-sizing: border-box;
+  text-align: center;
+  background-size: 100% 100%;
+  background-image: url('data:image/png;base64,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')
+}
+
+.integral-box {
+  width: 186rpx;
+  height: 186rpx;
+  border:2rpx solid rgba(253,205,159,1);
+  opacity:0.7;
+  border-radius:50%;
+  margin: 26rpx auto 18rpx;
+  overflow: hidden;
+  text-align: center
+}
+
+.integral-box .text1 {
+  color: #F5F0F0;
+  opacity: .8;
+  font-size: 26rpx;
+  margin-top: 38rpx;
+}
+
+.integral-box .now-integral {
+  color: #fff;
+  font-size: 60rpx;
+}
+
+.total-integral {
+  margin-top: 18rpx;
+  text-align: center;
+  color: #FEFEFE;
+  font-size: 12px;
+}
+
+.detaile-waper {
+  margin-top: 20rpx;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.item {
+  height: 150rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 37rpx 0 40rpx;
+  border-bottom: 1px solid #F6F6F6
+}
+
+.item .operation {
+  color: #000;
+  font-size: 14px;
+  margin-bottom: 20rpx;
+}
+
+.item .time {
+  color: #999999;
+  font-size: 12px;
+}
+
+.item .right {
+  color: #222;
+  font-size: 16px;
+}

@@ -1,0 +1,93 @@
+.tx-header {
+  display: flex;
+  padding-left: 43rpx;
+  height: 100rpx;
+  align-items: center;
+  border-top: 2rpx solid #F6F6F6;
+  border-bottom: 20rpx solid #F6F6F6;
+  font-size: 26rpx;
+  color: #222222;
+}
+
+.weixin_icon {
+  width: 41rpx;
+  height: 41rpx;
+  margin: 0 20rpx 0 30rpx;
+}
+
+.text1 {
+  color: #222222;
+  font-size: 12px;
+  margin: 30rpx 0 40rpx 40rpx;
+}
+
+.jifen-input {
+  height: 41rpx;
+  display: flex;
+  padding-left: 43rpx;
+}
+
+.jifen-input image {
+  width: 27rpx;
+  height: 27rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+
+.jifen-input input {
+  flex: 1;
+  height: 41rpx;
+  color: #222222;
+  font-size: 26rpx;
+}
+
+.jifen-input input::placeholder {
+  color: #666666;
+  font-size: 26rpx;
+}
+
+.money {
+  height: 30rpx;
+  line-height: 30rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 43rpx;
+  margin-top: 20rpx;
+}
+
+.money .money_icon {
+  color: #222222;
+  font-size: 36rpx;
+  margin-right: 25rpx;
+}
+
+.account-money {
+  color: #666666;
+  font-size: 26rpx;
+}
+
+.line {
+  height: 1rpx;
+  background-color: #F6F6F6;
+  margin: 40rpx 0 30rpx;
+}
+
+.tx-footer {
+  display: flex;
+  justify-content: space-between;
+  padding:  0 40rpx;
+  color: #222222;
+  font-size: 24rpx;
+}
+
+.tx-btn {
+  margin-top: 130rpx;
+  width: 500rpx;
+  height: 80rpx;
+  background-color: #F09B37;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  text-align: center
+}

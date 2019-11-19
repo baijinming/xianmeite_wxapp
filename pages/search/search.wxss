@@ -1,0 +1,24 @@
+/* pages/search/search.wxss */
+.text-gray-title{
+  font-size:28rpx;
+font-weight:400;
+color:rgba(153,153,153,1);
+margin: 35rpx 0 40rpx;
+}
+
+.searchItem{
+  font-size:26rpx;
+font-weight:400;
+color:rgba(34,34,34,1);
+border:2rpx solid rgba(237,237,237,1);
+border-radius:5rpx;
+padding: 13rpx 15rpx;
+display: inline-block;
+margin:0 30rpx 27rpx 0;
+}
+
+.carImg{
+  width: 50rpx;
+  height: 46rpx;
+  margin-left: 23rpx;
+}

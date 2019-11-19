@@ -1,0 +1,8 @@
+<view class="box">
+  <view class="shop-item" wx:for="{{shopList}}" wx:key="index">
+    <image class="shop-img" src="{{item.original_img}}"></image>
+    <view class="shop-name">{{item.goods_name}}</view>
+    <view wx:if="{{item.is_comment == 0}}" class="pj-btn"  bindtap="goComment" data-id="{{item.goods_id}}">评价</view>
+    <view wx:else class="aleardy-pj">已评价</view>
+  </view>
+</view>

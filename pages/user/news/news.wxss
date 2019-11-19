@@ -1,0 +1,49 @@
+.container {
+  background-color: #F6F6F6;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden
+}
+
+.item-waper {
+  overflow: hidden;
+}
+
+.time {
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  width: 200rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  background:rgba(34,34,34,1);
+  opacity:0.2;
+  border-radius:15rpx;
+  margin: 40rpx auto 30rpx;
+}
+
+.content {
+  width: 690rpx;
+  margin: 0 auto 20rpx;
+  background:rgba(255,255,255,1);
+  border-radius:10rpx;
+  overflow: hidden;
+}
+
+.title {
+  color: #222222;
+  font-size: 16px;
+  font-weight:bold;
+  margin: 23rpx 0 0 28rpx;
+}
+
+.message {
+  color: #666666;
+  font-size: 12px;
+  margin: 30rpx 30rpx 60rpx 30rpx;
+}
+
+.no-msg {
+  margin-top: 100rpx;
+  text-align: center
+}

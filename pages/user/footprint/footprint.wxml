@@ -1,0 +1,14 @@
+<view class='container'>
+  <view class='item' wx:for="{{list}}" wx:key="index">
+    <view class='header'>
+      <view class='time'>{{item.time}}</view>
+      <view class='line'></view>
+    </view>
+    <view class='content'>
+      <navigator url="/pages/detail/detail?id={{item.goods_id}}" class='item' wx:for="{{item.content}}" wx:key="index">
+        <image src='{{item.original_img}}'></image>
+        <view class='title'>{{item.goods_name}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>

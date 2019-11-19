@@ -1,0 +1,4 @@
+<view class='container'>
+  <textarea class='proposal' value='{{proposal}}' placeholder='请在此处写下您的意见与建议哟～'/>
+  <button class='btn' bindtap="tjBtn">提交</button>
+</view>

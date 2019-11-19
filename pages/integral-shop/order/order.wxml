@@ -1,0 +1,83 @@
+
+<view hidden="{{hiddenPage}}">
+  <view class='pageWrapper'>
+    <view class='address'>
+      <view><image class='addrPos' src='../../../images/address@2x.png'></image></view>
+      <view class='addrWrapper' wx:if="{{hasAddress}}">
+        <view>{{addressList.consignee}} <text>{{addressList.mobile}}</text></view>
+        <view class='addrDetail'>
+          {{addressList.province_name}}{{addressList.city_name}}{{addressList.district_name}}{{item.address}}
+        </view>
+      </view>
+      <view class='addrWrapper' wx:else>您还没有收货人地址</view>
+      <view bindtap="goAddress"><image class='arrow' src='../../../images/comment.png'></image></view>
+    </view>
+    <!-- <view class='chooseType'>
+      <view class='text'>选择支付方式</view>
+      <view class='payType'>
+        <view bindtap='changeType' data-type='1'>
+          <view class="checkbox">
+            <image wx:if="{{payType==1}}" class="radio"
+                   src='../../images/gou@2x.png' bindtap='changeType' data-type='1'>
+            </image>
+            <image wx:else class="radio"
+                   src='../../images/gou.png' bindtap='changeType' data-type='1'>
+            </image>
+          </view>
+          微信支付
+        </view>
+        <view bindtap='changeType' data-type='2'>
+          <view class="checkbox">
+            <image wx:if="{{payType==2}}" class="radio"
+                   src='../../images/gou@2x.png' bindtap='changeType' data-type='2'>
+            </image>
+            <image wx:else class="radio"
+                   src='../../images/gou.png' bindtap='changeType' data-type='2'>
+            </image>
+          </view>
+          余额支付
+        </view>
+      </view>
+    </view> -->
+
+    <view class='conGoods'>
+      <view>
+        <view class='conGoodsList'>
+          <view class='bgImg' style='background-image:url({{goodsList.original_img}})'></view>
+          <view class='con'>
+            <view class='gTitle'>{{goodsList.goods_name}}</view>
+            <!-- <view class='gUnit'>规格：{{goodsList.spec_key_name}}</view> -->
+            <view class='gCount'>数量：1</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='calcViewWrapper'>
+        <view class='calcView'> <text>消费积分</text> <view>{{goodsList.integral_count}} </view></view>
+        <!-- <view class='calcView'> <text>邮费</text> <view>￥{{totalPrice.post_fee}} </view></view>
+        <view class='calcView' wx:if="{{!immediately}}"> <text>消耗积分</text> <view class='text-success'>￥{{integral_money}} </view></view>
+        <view class='calcView' wx:else> <text>优惠</text> <view class='text-success'>￥{{totalPrice.cut_fee}}</view></view> -->
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class='confirmBtn'>
+    <view>
+      <text>共{{totalPrice.num}}件</text>
+      <view wx:if="{{!immediately}}">合计: <view class='text-danger'>￥{{totalPrice.total_fee - integral_money}}</view></view>
+      <view wx:else >合计: <view class='text-danger'>￥{{totalPrice.total_fee}}</view></view>
+    </view>
+    <button bindtap="confirmOrder">提交订单</button>
+  </view> -->
+  <view class="tj-btn" bindtap="confirmOrder">提交订单</view>
+
+  <!-- 余额不足 -->
+  <view wx:if="{{showPopup}}" class="mask" bindtap="closePopup"></view>
+  <view wx:if="{{showPopup}}" class="recharge-popup">
+    <image class="close" src="../../../images/close.png" bindtap="closePopup"></image>
+    <image class="money-icon" src="../../../images/money_icon.png"></image>
+    <view class="popup-text1">积分不足</view>
+    <!-- <view class="popup-text2">当前积分不足，赶快去充值吧</view> -->
+    <!-- <navigator class="recharge-btn" url="/pages/user/recharge/recharge">立即充值</navigator> -->
+  </view>
+</view>

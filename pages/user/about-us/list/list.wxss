@@ -1,0 +1,23 @@
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #F6F6F6;
+  border-top: 1rpx solid #DDDDDD;
+  box-sizing: border-box;
+}
+
+.item {
+  height: 110rpx;
+  padding: 0 22rpx 0 34rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #222222;
+  font-size: 14px;
+  background-color: #fff;
+  border-bottom: 1rpx solid #F6F6F6
+}
+
+.item .arrow {
+  color: #B3B3B3
+}

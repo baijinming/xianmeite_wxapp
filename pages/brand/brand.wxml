@@ -1,0 +1,27 @@
+<!--pages/brand/brand.wxml-->
+<view wx:for='{{list}}' wx:for-item='data' wx:for-index='goods_index' class="brandSwiper" hidden="{{list.length==0}}">
+  <view class="dSwiper">
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+            bindchange='swiperChange'
+            data-id="{{data.goods_id}}"
+    >
+      <block wx:for="{{data.gallery}}">
+        <swiper-item  bindtap="previewImage" data-current="{{item.image_url}}" data-index='{{goods_index}}' style='background-image:url("{{item.image_url}}")'></swiper-item>
+      </block>
+    </swiper>
+    <view class="showNum">{{currentIndex[data.goods_id]}}/{{data.gallery.length}}</view>
+    </view>
+    <view class="container">
+    <view class="dTitle">{{data.goods_name}}</view>
+    <view class="dDesc">{{data.goods_remark}}</view>
+    <view class="dPrice">￥{{data.shop_price}} <view>￥{{data.market_price}}</view></view>
+    <navigator url="/pages/detail/detail?id={{data.goods_id}}">
+      <image src='../../images/chat-blue.png' class="car"></image>    
+    </navigator>
+  </view>
+  
+  <view class="grayBlock"></view>
+</view>
+
+<empty wx:if="{{list.length == 0}}"></empty>

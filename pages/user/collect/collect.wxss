@@ -1,0 +1,150 @@
+.collect {
+  overflow: hidden
+}
+
+.tabBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 76rpx;
+  padding:  0 135rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #DDDDDD
+}
+
+.tabBar view {
+  height: 76rpx;
+  line-height: 76rpx;
+  color: #222222;
+  font-size: 26rpx;
+}
+
+.tabBar .tab-checked {
+  border-bottom: 4rpx solid #F09B37
+}
+
+.item {
+  height: 210rpx;
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: margin-left 0.2s ease-in-out;
+  border-bottom: 1rpx solid #DDDDDD
+}
+
+.sp-img {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 0 30rpx 0 40rpx;
+}
+
+.sp-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 140rpx;
+}
+
+.name {
+  color: #222222;
+  font-size: 14px;
+  white-space:nowrap; 
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.desc {
+  color: #666666;
+  font-size: 12px;
+  white-space:nowrap; 
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.price {
+  color: #E73A38;
+  font-size: 14px;
+  font-weight: 500
+}
+
+.price text {
+  font-size: 12px;
+  color: #999999;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+
+.buy {
+  position: absolute;
+  top: 105rpx;
+  left: 616rpx;
+}
+
+.buy image {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.remove-btn {
+  background-color: #FF1144;
+  width: 120rpx;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -120rpx;
+  border-radius: 0;
+  color: #fff;
+  font-size: 14px;
+  line-height: 210rpx;
+  text-align: center;
+}
+
+.no-collect {
+  background-color: #fff;
+  overflow: hidden
+}
+
+.no-collect .noCollect-img{
+  width: 164rpx;
+  height: 164rpx;
+  margin: 245rpx auto 24rpx;
+  display: block
+}
+
+.no-collect .text {
+  color: #9A9A9A;
+  font-size: 12px;
+  text-align: center
+}
+
+.no-collect .btn {
+  width:240rpx;
+  height:76rpx;
+  background:rgba(240,155,55,1);
+  border-radius:6rpx;
+  color: #fff;
+  font-size: 14px; 
+  line-height: 76rpx;
+  text-align: center;
+  margin: 100rpx auto 0;
+}
+
+.st-img {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 42rpx;
+}
+
+.st-content {
+  justify-content: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 28rpx;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #999999
+}

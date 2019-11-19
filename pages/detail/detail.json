@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "shopCar":"/components/shopcar/shopcar",
+    "product": "/components/product/product",
+    "empty": "/components/empty/empty",
+    "joinCar":"/components/joinCar/joinCar"
+  },
+  "navigationBarTitleText": "商品详情"
+}

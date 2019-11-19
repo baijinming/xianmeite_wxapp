@@ -1,0 +1,26 @@
+<!--pages/search/search.wxml-->
+<!-- <navHead></navHead> -->
+<view class='container'>
+    <view class="wxSearch">
+        <image src='../../images/search.png' class="icon"  bindtap='searchKeyword'></image>
+        <input bindinput="handleChange" class='searchInput' placeholder="输入你要找的商品" focus value='{{keyword}}' bindfocus='bindfocus'/>
+        <view wx:if="{{showSearch}}" class='text' bindtap='searchKeyword'>搜索</view>
+        <navigator wx:if='{{!showSearch}}' url='/pages/shopping/shopping' open-type="switchTab" hover-class="none">
+            <image src="../../images/car.png" class="carImg"></image>
+        </navigator>
+    </view>
+</view>
+
+<view class='container' hidden="{{!showSearch}}">
+    <view class='text-gray-title'>热门搜索</view>
+    <view class='searchList'>
+        <view class='searchItem' wx:for='{{searchList}}' wx:key='{{index}}' wx:for-item="item" data-name='{{item}}' bindtap='searchHotWord'>{{item}}</view>
+    </view>
+</view>
+
+<!-- 推荐商品列表 -->
+<view class='proList' hidden="{{showSearch}}">
+    <block wx:for="{{proList}}"  wx:key='{{index}}'>
+      <product source='{{item}}'></product>
+    </block>
+</view>

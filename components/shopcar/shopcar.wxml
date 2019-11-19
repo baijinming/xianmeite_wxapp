@@ -1,0 +1,5 @@
+<!--components/shopcar/shopcar.wxml-->
+<image bindtap="joinShopCar" class='shopCar' src='../../images/chat-blue.png'></image>
+
+<!-- 加入购物车 -->
+<joinCar hidden='{{hidden}}' orderId='{{orderId}}'></joinCar>

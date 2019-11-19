@@ -1,0 +1,33 @@
+<view class="skill-container">
+  <image class="success_icon" src="/static/images/activity/success@2x.png"></image>
+  <view class="text1">恭喜您充值成功!</view>
+  <view class="text2" style="margin-bottom: 0">您获得{{title.score}}分，可扣除{{title.removeNum}}位竞争者10分</view>
+  <view class="text2" style="margin-top: 0;margin-bottom: 40rpx;">（可同时扣除同一竞争者）</view>
+  <view class="line"></view>
+  <view class="text3">选择扣除分数的参与者</view>
+  <view class="table">
+    <view class="table-th">
+      <view class="table-th1">得分</view>
+      <view class="table-th2">用户</view>
+      <view class="table-th3">选择</view>
+      <view class="table-th4">扣除分数</view>
+    </view>
+    <view class="table-td" wx:for="{{user_list}}" wx:key="index" wx:if="{{item.data[0]}}" wx:for-index="lindex">
+      <view class="table-td1">{{item.name}}</view>
+      <view class="table-td2">
+        <view class="table-td2-item" wx:for="{{item.data}}" wx:key="index" >
+          <view class="table-td2-name">{{item.nickname}}</view>
+          <view class="gou-box">
+            <image wx:if="{{item.check}}" class="gou1" src="/static/images/activity/gou1.png" bindtap="reduce" data-lindex="{{lindex}}" data-index="{{index}}"></image>
+            <image wx:else class="gou0" src="/static/images/activity/gou0.png" bindtap="choose" data-lindex="{{lindex}}" data-index="{{index}}"></image>
+          </view>
+          <picker class="select" bindchange="bindPickerChange" value="{{index}}" range="{{scoreList}}" data-lindex="{{lindex}}" data-index="{{index}}">
+            {{item.num}}0分
+          </picker>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="text4">确认后增加与减少的分数将进行调整，调整后的分数将计入下次更新的得分阶梯表中</view>
+  <button class="sure-btn" bindtap="sure">确定</button>
+</view>

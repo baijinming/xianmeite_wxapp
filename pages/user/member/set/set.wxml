@@ -1,0 +1,79 @@
+<!-- <view class="member-set">
+  <view class="set-table">
+    <view class="set-th">
+      <view class="set-title1">尊享权益</view>
+      <view class="grade-th">
+        <view class="member-grade">会员等级</view>
+        <view class="member-card">
+          <view class="member-class" style="line-height:100rpx">普通会员</view>
+          <view class="member-class" style="border-left: 1rpx solid #666666;padding-top:13rpx">金卡会员 <view>累计积分7000</view> </view>
+          <view class="member-class" style="border-left: 1rpx solid #666666;padding-top:13rpx">铂金卡会员 <view>累计积分14,000</view> </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="set-td">
+      <view class="td-title">积分换礼</view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+    </view>
+    <view class="set-td">
+      <view class="td-title">急速配送</view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+    </view>
+    <view class="set-td">
+      <view class="td-title">售后服务</view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+    </view>
+    <view class="set-td">
+      <view class="td-title">特色活动</view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+    </view>
+    <view class="set-td">
+      <view class="td-title">会员价格</view>
+      <view class="td-grid"></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+    </view>
+    <view class="set-td jftx">
+      <view class="td-title">积分提现</view>
+      <view class="td-grid jf-grid"></view>
+      <view class="td-grid jf-grid"><image src="/static/images/user/member/gou.png"></image><view>每月一次</view></view>
+      <view class="td-grid jf-grid"><image src="/static/images/user/member/gou.png"></image><view>每月两次</view></view>
+    </view>
+    <view class="set-td">
+      <view class="td-title">专属服务</view>
+      <view class="td-grid"></view>
+      <view class="td-grid"></view>
+      <view class="td-grid"><image src="/static/images/user/member/gou.png"></image></view>
+    </view>
+
+  </view>
+
+  <view class="sj-title">如何升级</view>
+
+  <view class="sj-table">
+    <view class="sj-th">
+      <view class="sj-th-title1">任务名称</view>
+      <view class="sj-th-title2">获得积分规则</view>
+    </view>
+    <view class="sj-td">
+      <view class="sj-td-grid1">余额充值</view>
+      <view class="sj-td-grid2">充值1元获得1积分</view>
+    </view> 
+    <view class="sj-td">
+      <view class="sj-td-grid1">消费</view>
+      <view class="sj-td-grid2">消费1元获得1积分</view>
+    </view> 
+  </view>
+</view> -->
+
+<image class="rule1" src="https://dstest.pxuc.com.cn/Public/imgs/rule1.png"></image>
+<image class="rule2" src="https://dstest.pxuc.com.cn/Public/imgs/rule2.png"></image>

@@ -1,0 +1,10 @@
+<view class='container'>
+  <view class='item-waper' wx:for="{{showList}}" wx:key="index">
+    <view class='time'>{{item.time}}</view>
+    <view class='content' wx:for="{{item.msg}}" wx:key="index" >
+      <view class='title'>{{item.title}}</view>
+      <view class='message'>{{item.content}}</view>
+    </view>
+  </view>
+  <view wx:if="{{showList.length == 0}}" class="no-msg">暂无消息</view>
+</view>

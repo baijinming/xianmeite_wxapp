@@ -1,0 +1,20 @@
+<view>
+  <navigator class="card" url="/pages/user/member/set/set">
+    <image class="card_bg" src="{{cardList[myMember.level_id-1]}}"></image>
+    <image class="pentagon" src="/static/images/user/member/pentagon.png"></image>
+    <view class="card-title">
+      <view class="card-title1">{{myMember.name}}</view>
+      <view class="card-title2">{{myMember.text}}</view>
+    </view>
+  </navigator>
+  <view class="member-title">我的权益</view>
+  <view class="equity">
+    <view class="equity-item" wx:for="{{equityList}}" wx:key="index">
+      <image class="equity-icon" src="{{item.iconUrl}}"></image>
+      <view class="equity-text"> 
+        <view class="text1">{{item.text1}}</view>
+        <view class="text2">{{item.text2}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+.container {
+  background-color: #F6F6F6;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden
+}
+
+.logo {
+  width: 220rpx;
+  height: 220rpx;
+  margin: 60rpx auto 0;
+  display: block
+}
+
+.text {
+  color: #222222;
+  font-size: 16px;
+  width: 670rpx;
+  margin: 55rpx auto 0;
+  line-height: 55rpx;
+  text-indent: 2em
+}

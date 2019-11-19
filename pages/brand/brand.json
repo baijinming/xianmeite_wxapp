@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "empty": "/components/empty/empty"
+  },
+  "navigationBarTitleText": "品牌特价"
+}

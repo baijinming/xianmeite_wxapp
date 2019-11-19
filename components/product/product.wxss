@@ -1,0 +1,69 @@
+/* components/product/product.wxss */
+
+.listItem{
+  width: 335rpx;
+  float: left;
+  background:rgba(250,250,250,1);
+  margin-bottom: 30rpx;
+  margin-right: 20rpx;
+  position: relative;
+}
+.listItem .bgImg,.pubBgImg{
+  height: 330rpx;
+  margin-bottom: 20rpx;
+  background-size: contain;
+}
+.listItem .con{
+  padding: 0 10rpx;
+  position: relative;
+  padding-bottom: 32rpx;
+  /* padding-right: 70rpx; */
+}
+.listItem .title,.pubTitle{
+  font-size:28rpx;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+  line-height:34rpx;
+  margin-bottom: 20rpx;
+    /*height: 68rpx;*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.listItem .desc,.pubDesc{
+  font-size:24rpx;
+font-weight:400;
+color:rgba(102,102,102,1);
+line-height:34rpx;
+margin-bottom: 25rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 70rpx;
+}
+
+.listItem .price{
+  padding-right: 90rpx
+}
+.listItem .price,.pubPrice{
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(231,58,56,1);
+  line-height:34rpx;
+  white-space: nowrap;
+}
+
+.listItem .price view,.pubPrice view{
+  text-decoration:line-through;
+  color: #999999;
+  display: inline-block;
+  font-size: 26rpx;
+}
+
+.carWrapper{
+  display: inline-block;
+  position: absolute;
+  bottom: 30rpx;
+  right: 15rpx;
+}

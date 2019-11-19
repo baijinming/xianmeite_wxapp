@@ -1,0 +1,49 @@
+.box {
+  border-top: 20rpx solid #F6F6F6;
+}
+
+.shop-item {
+  padding: 30rpx 30rpx 30rpx 60rpx;
+  position: relative;
+  display: flex;
+}
+
+.shop-img {
+  width: 128rpx;
+  height: 128rpx;
+}
+
+.shop-name {
+  color: #222222;
+  font-size: 14px;
+  margin-left: 30rpx;
+}
+
+.pj-btn {
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+  width:140rpx;
+  height:60rpx;
+  border:2rpx solid rgba(240,155,55,1);
+  border-radius:10rpx;
+  color: #F09B37;
+  font-size: 14px;
+  line-height: 60rpx;
+  text-align: center
+}
+
+.aleardy-pj {
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+  width:140rpx;
+  height:60rpx;
+  border:2rpx solid #F6F6F6;
+  border-radius:10rpx;
+  color: #F09B37;
+  font-size: 14px;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #F6F6F6
+}

@@ -1,0 +1,39 @@
+<view class='container'>
+  <view class='form' bindsubmit='addAddr'>
+    <view class='form-item'>
+      <text>收货人</text>
+      <input class='name' bindinput="getName" placeholder='请输入姓名'></input>
+    </view>
+    <view class='form-item'>
+      <text>电话</text>
+      <input class='phone' bindinput="getPhone" type='number' placeholder='请输入电话号码'></input>
+    </view>
+    <view class='form-item'>
+      <text>所在地区</text>
+      <!-- 自定义地区选择框 -->
+      <view class="area-picker">
+        <view bindtap="showPicker">{{region}} > </view>
+        <view wx:if="{{showPicker}}" class="picker-mask" bindtap="closePicker"></view>
+        <view wx:if="{{showPicker}}" class="dq-picker">
+          <image bindtap="closePicker" class="fork" src="/static/images/user/address/fork.png"></image>
+          <view class="title">请选择地区</view>
+          <view class="dq-value">
+            <view wx:for="{{dqValue}}" wx:key="index">{{item.name}}</view>
+            <view class="xz-title">请选择</view>
+          </view>
+          <scroll-view class="select-box" scroll-y="true">
+            <view wx:for="{{shwoContent}}" wx:key="index" bindtap="chooseAddre" data-item="{{item}}">{{item.name}}</view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+    <textarea bindblur="getDetailAddr" placeholder='输入详细地址'/>
+  </view>
+
+  <view class='mr-waper'>
+    <view>设为默认地址</view>
+    <switch checked bindchange="switchChange" color="#2DB700"></switch>
+  </view>
+
+  <button class='btn' bindtap="addAddress">保存</button>
+</view>

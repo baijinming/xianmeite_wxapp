@@ -1,0 +1,65 @@
+<!--pages/confirmOrder/confirm.wxml-->
+<view hidden="{{hiddenPage}}">
+  <view class='pageWrapper'>
+    <view class='address'>
+      <view><image class='addrPos' src='../../images/address@2x.png'></image></view>
+      <view class='addrWrapper' wx:if="{{hasAddress}}">
+        <view>{{addressList.consignee}} <text>{{addressList.mobile}}</text></view>
+        <view class='addrDetail'>
+          {{addressList.province_name}}{{addressList.city_name}}{{addressList.district_name}}{{item.address}}
+        </view>
+      </view>
+      <view class='addrWrapper' wx:else>您还没有收货人地址</view>
+      <view bindtap="goAddress"><image class='arrow' src='../../images/comment.png'></image></view>
+    </view>
+    <!-- <view class='chooseType'>
+      <view class='text'>选择支付方式</view>
+      <view class='payType'>
+        <view bindtap='changeType' data-type='1'>
+          <view class="checkbox">
+            <image wx:if="{{payType==1}}" class="radio"
+                   src='../../images/gou@2x.png' bindtap='changeType' data-type='1'>
+            </image>
+            <image wx:else class="radio"
+                   src='../../images/gou.png' bindtap='changeType' data-type='1'>
+            </image>
+          </view>
+          微信支付
+        </view>
+        <view bindtap='changeType' data-type='2'>
+          <view class="checkbox">
+            <image wx:if="{{payType==2}}" class="radio"
+                   src='../../images/gou@2x.png' bindtap='changeType' data-type='2'>
+            </image>
+            <image wx:else class="radio"
+                   src='../../images/gou.png' bindtap='changeType' data-type='2'>
+            </image>
+          </view>
+          余额支付
+        </view>
+      </view>
+    </view> -->
+
+    <view class='conGoods'>
+      <view>
+        <view class='conGoodsList'>
+          <view class='bgImg' style='background-image:url({{goodsList.original_img}})'></view>
+          <view class='con'>
+            <view class='gTitle'>{{goodsList.goods_name}}</view>
+            <view class='gCount'>数量：1</view>
+          </view>
+        </view>
+      </view>
+
+      <!--  -->
+    </view>
+  </view>
+
+  <view class='confirmBtn'>
+    <!-- <view>
+      <text>共{{totalPrice.num}}件</text>
+      <view>合计: <view class='text-danger'>￥{{totalPrice.total_fee - integral_money}}</view></view>
+    </view> -->
+    <button bindtap="confirmOrder">领取奖品</button>
+  </view>
+</view>

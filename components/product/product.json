@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "shopCar": "/components/shopcar/shopcar"
+  }
+}

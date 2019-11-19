@@ -1,0 +1,42 @@
+.header-img {
+  width: 750rpx;
+  height: 400rpx;
+}
+
+.contact {
+  margin: 40rpx 0 30rpx 30rpx;
+  display: flex;
+  color: #333333;
+  font-size: 14px;
+  line-height: 30rpx;
+}
+
+.line {
+  width: 6rpx;
+  height: 30rpx;
+  background-color: #F09B37;
+  margin-right: 8rpx;
+}
+
+.content {
+  border-top: 1rpx solid #DDDDDD;
+  padding: 0 37rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap
+}
+
+.item {
+  width: 310rpx;
+  text-align: center;
+  color: #222222;
+  font-size: 12px;
+  margin-top: 90rpx;
+}
+
+.icon {
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin: 0 auto 30rpx;
+}

@@ -1,0 +1,127 @@
+.container {
+  background-color: #F6F6F6;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden
+}
+
+.nav {
+  background-color: #fff;
+  color: #222222;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.nav-item {
+  width: 20%;
+  line-height: 65rpx;
+  text-align: center;
+  position: relative
+}
+
+.checked::after {
+  content: "";
+  width: 76rpx;
+  height: 4rpx;
+  background-color: #F09B37;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.order-item {
+  width: 690rpx;
+  margin: 25rpx auto;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.order-type {
+  color: #F09B37;
+  font-size: 14px;
+  float: right;
+  margin-right: 30rpx;
+  line-height: 80rpx;
+  font-weight: 500
+}
+
+.order-time {
+  color: #999999;
+  font-size: 12px;
+  line-height: 80rpx;
+  padding-left: 30rpx;
+  border-bottom: 1rpx solid #F6F6F6;
+}
+
+.order-goods {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20rpx 10rpx;
+}
+
+.order-goods image {
+  width: 115rpx;
+  height: 115rpx;
+  margin: 20rpx 25rpx;
+}
+
+.order-amount {
+  color: #222222;
+  direction: rtl;
+  padding-right: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #F6F6F6;
+  font-weight: bold
+}
+
+.button-groups {
+  display: flex;
+  flex-direction: row-reverse;
+
+}
+
+.button-groups .btn {
+  width:140rpx;
+  height:60rpx;
+  border:2rpx solid rgba(240,155,55,1);
+  border-radius:10rpx;
+  color: #F09B37;
+  font-size: 14px;
+  line-height: 60rpx;
+  text-align: center;
+  margin: 30rpx 30rpx 30rpx 0;
+  background-color: #fff;
+}
+
+
+.no-order .noOrder-img{
+  width: 164rpx;
+  height: 164rpx;
+  margin: 190rpx auto 24rpx;
+  display: block
+}
+
+.no-order .text {
+  color: #9A9A9A;
+  font-size: 12px;
+  text-align: center;
+}
+
+.no-order .btn {
+  width:240rpx;
+  height:76rpx;
+  background:rgba(240,155,55,1);
+  border-radius:6rpx;
+  margin: 100rpx auto 0;
+  color: #FFFFFF;
+  font-size: 14px;
+  line-height: 76rpx;
+  text-align: center
+}

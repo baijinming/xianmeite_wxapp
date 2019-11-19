@@ -1,0 +1,23 @@
+<!--pages/newDiscount/discount.wxml-->
+<view class='discount' wx:if="{{!list[0]}}">
+  <view class='discountWrapper'>
+  <view>遇见你，我很高兴</view>
+  <image src='../../images/zhekou.png'></image>
+  <button class="btn" bindtap="lqwelfare">点击领取</button>
+  </view>
+</view>
+
+<view wx:else style="padding:30rpx">
+  <view class='listItem' wx:for="{{list}}" wx:key="{{index}}" wx:for-item="source">
+    <navigator url="/pages/welfare-detail/welfare-detail?id={{source.goods_id}}">
+      <view class='bgImg' 
+            style='background-image:url({{source.original_img}})'>
+      </view>
+      <view class='con'>
+        <view class='title'>{{source.goods_name}}</view>
+        <view class='desc'>{{source.goods_remark}}</view>
+        <view class='price'> <text>新人价</text> ¥{{source.shop_price}} <view>¥{{source.market_price}}</view> </view>
+      </view>
+    </navigator>
+  </view>
+</view>
